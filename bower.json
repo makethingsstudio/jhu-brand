@@ -1,5 +1,5 @@
 {
-  "name": "dev",
+  "name": "jhu_id",
   "private": true,
   "dependencies": {
     "modernizr": "~2.6.2",
