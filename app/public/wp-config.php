@@ -2,22 +2,22 @@
 // ===================================================
 // Load database info and local development parameters
 // ===================================================
-if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
-	define( 'WP_LOCAL_DEV', true );
-	include( dirname( __FILE__ ) . '/local-config.php' );
+define('APP_ROOT', dirname(__DIR__));
+define('PUBLIC_ROOT', APP_ROOT . '/public');
+// define('APP_ENV', getenv('APPLICATION_ENV'));
+
+/** Require environment-specific configuration */
+if (file_exists(APP_ROOT . '/config/local-config.php')) {
+    require APP_ROOT . '/config/local-config.php';
+} else if (APP_ENV) {
+    require APP_ROOT . '/config/' . APP_ENV . '-config.php';
 } else {
-	define( 'WP_LOCAL_DEV', false );
-	define( 'DB_NAME', '%%DB_NAME%%' );
-	define( 'DB_USER', '%%DB_USER%%' );
-	define( 'DB_PASSWORD', '%%DB_PASSWORD%%' );
-	define( 'DB_HOST', '%%DB_HOST%%' ); // Probably 'localhost'
+    require APP_ROOT . '/config/dev-config.php';
 }
 
-// ========================
-// Custom Content Directory
-// ========================
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+if(isset( $_GET['debug'] ) && APP_ENV != 'production') :
+    die( 'APP Root is:' . WPMU_PLUGIN_DIR);
+endif;
 
 // ================================================
 // You almost certainly do not want to change these
@@ -29,14 +29,14 @@ define( 'DB_COLLATE', '' );
 // Salts, for security
 // Grab these from: https://api.wordpress.org/secret-key/1.1/salt
 // ==============================================================
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+define('AUTH_KEY',         '{!skk*qvA{X|9`FkQt7+XmK]`.iQ@+QQQeF-y(Yp)];HSd#r<,@)6=ohq{B7tH+T');
+define('SECURE_AUTH_KEY',  '[6lU.XK$oezb0fUqmb.c3L$U$-m j_qN+h>Dq:RIavT`RPpBo?o*Hzhk?n;Nes3f');
+define('LOGGED_IN_KEY',    'DurgClAYN|%B*p+,Po7*Qoz&}%_S#?b}5n))<-{xe,~=w.AM-HE]4|JXy5jKRKMm');
+define('NONCE_KEY',        'eL+LD@was6R` 2Elf>kao,h!fhht|P-HW|t,4Tr`wm`$x8hJ5|!B0gMGT3q7Lt%R');
+define('AUTH_SALT',        'vA8.~r;+:ZfxtF-fJ4kMZGQ:Ev8[Q)[7V7`x |AOBC]NRZmT3|YV,{d1&|%$A6@d');
+define('SECURE_AUTH_SALT', '<>l}hu6O$R:*peL;{$-L.Er|p?*QXv=gu;I-#{Tq?E+w;kaHT(o&O+?,TwKXS%A{');
+define('LOGGED_IN_SALT',   'o~<3/Q5>W*}o^}BQ%RnZ.p<9U?J+T9D+_8!x&gX%|hxT6>i:Sf],Pr_07uLK#V[P');
+define('NONCE_SALT',       'f6 ]<emy@nuqw+|rm~LK`^yO]c^<^}pFKffg(^K-QkK1c;Gw!%zGMZ0qngl9S-)!');
 
 // ==============================================================
 // Table prefix
@@ -49,19 +49,6 @@ $table_prefix  = 'wp_';
 // Leave blank for American English
 // ================================
 define( 'WPLANG', '' );
-
-// ===========
-// Hide errors
-// ===========
-ini_set( 'display_errors', 0 );
-define( 'WP_DEBUG_DISPLAY', false );
-
-// =================================================================
-// Debug mode
-// Debugging? Enable these. Can also enable them in local-config.php
-// =================================================================
-// define( 'SAVEQUERIES', true );
-// define( 'WP_DEBUG', true );
 
 // ======================================
 // Load a Memcached config if we have one

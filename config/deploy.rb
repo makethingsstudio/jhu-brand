@@ -1,4 +1,7 @@
-set :application, "set your application name here"
+# Set Stages
+set :stages, %w(dev staging production)
+
+set :application, "identity.jhu.edu"
 set :repository,  "set your repository location here"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
