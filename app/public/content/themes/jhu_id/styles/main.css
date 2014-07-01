@@ -193,7 +193,7 @@ body {
 }
 
 .site_nav:after,
-.footer_nav {
+.footer_nav:after {
     content: '';
     display: inline-block;
     width: 100%;
@@ -202,6 +202,7 @@ body {
 .site_nav > li,
 .footer_nav > li {
     width: 32%;
+    margin-bottom: 18px;
     text-align: left;
 }
 
@@ -530,8 +531,8 @@ body {
 }
 
 .home .site-nav {
-    width: 376px;
-    margin: 0 auto;
+    width: 80%;
+    margin: 0 0 0 20%;
 }
 
 .home .site_nav-heading {

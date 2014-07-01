@@ -38,7 +38,7 @@
         $option .= '<span class="site_nav-color" style="background-color:' . $color . '"></span>';
         $option .= $page->post_title;
         $option .= '</a>';
-        $option .= '</li>';
+        $option .= '</li> ';
         echo $option;
 
     }
