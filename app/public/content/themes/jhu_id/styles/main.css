@@ -1,0 +1,556 @@
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/*===========================================================
+    ^Elements
+===========================================================*/
+body {
+    font-family: 'gentona', helvetica, arial, sans-serif;
+    color: #2c2c33;
+}
+
+
+/*===========================================================
+    ^Molecules
+===========================================================*/
+.menu-toggle {
+    display: inline-block;
+    padding: 30px 20px;
+    font-family: 'titling-gothic', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #7b7ca6;
+}
+
+.menu-toggle:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -500%;
+    width: 500%;
+    min-height: 6em;
+    background-color: #7b7ca6;
+}
+
+.entry-heading {
+    font-family: 'quadon', serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 2;
+}
+
+.nav {
+    font-size: 0px;
+    line-height: 1;
+}
+
+.nav,
+.nav > li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    vertical-align: top;
+}
+
+.nav > li > a {
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.nav--stack,
+.nav--stack > li {
+    display: list-item;
+}
+
+
+/*  ^Billboard
+===========================================================*/
+.billboard-is-fullheight .off-canvas-wrap,
+.billboard-is-fullheight .inner-wrap {
+    height: 100%;
+    overflow-y: visible;
+}
+
+.billboard-is-fullheight .billboard--fullheight {
+    height: 90%;
+    max-height: 900px;
+}
+
+.billboard--fullheight .billboard-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.billboard--fullheight .billboard-background:before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+
+/*===========================================================
+    ^Organisms
+===========================================================*/
+/*  ^Site Nav
+===========================================================*/
+.site_nav-heading {
+    font-family: 'quadon', serif;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+}
+
+.site_nav,
+.footer_nav {
+    position: relative;
+    text-align: justify;
+}
+
+.site_nav:after,
+.footer_nav {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.site_nav > li,
+.footer_nav > li {
+    width: 32%;
+    text-align: left;
+}
+
+.site_nav > li > a {
+    position: relative;
+    padding: 0 18px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #e5e2e0;
+}
+
+.site_nav .site_nav-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 18px;
+}
+
+
+/*  ^Footer Nav
+===========================================================*/
+.footer_nav > li > a {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #b4b2ad;
+}
+
+
+
+/*  ^Page Nav
+===========================================================*/
+.page_nav {
+    font-family: 'gentona';
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.page_nav > li {
+    margin-bottom: 9px;
+}
+
+.page_nav a {
+    color: #7e7e7c;
+}
+
+.page_nav a:hover {
+    color: #7b7ca6;
+}
+
+
+/*  ^Home Media
+===========================================================*/
+.home_media {
+
+}
+
+.home_media .media-heading {
+    font-family: 'quadon', serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1;
+}
+
+.home_media p {
+    font-size: 15px;
+    line-height: 24px;
+}
+
+
+/*  ^Guidelines
+===========================================================*/
+.guideline-item .example-item {
+
+}
+
+.guideline-item .media-header {
+    padding-top: 18px;
+}
+
+.guideline-item .media-heading {
+    margin: 0;
+    font-family: 'quadon', serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.guideline-item .media-text {
+    font-family: 'gentona', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+
+/*  ^Examples
+===========================================================*/
+.example-item {
+    position: relative;
+    display: block;
+    padding: 18px;
+    border: 1px solid #7b7ca6;
+    background-color: #fff;
+}
+
+.example-id {
+    position: absolute;
+    bottom: 9px;
+    left: 9px;
+}
+
+
+/*  ^Captions
+===========================================================*/
+.example-captions {
+
+}
+
+.example-caption {
+    display: block;
+    margin-bottom: 9px;
+    text-decoration: none;
+    color: #7b7ca6;
+}
+
+.example-id,
+.example-caption-id {
+    display: block;
+    padding: 3px 6px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1;
+    color: #7b7ca6;
+    border: 1px solid #7b7ca6;
+    background: #fff;
+}
+
+.example-caption-text {
+    display: block;
+}
+
+
+
+/*===========================================================
+    ^Masthead
+===========================================================*/
+
+
+.brand-logo {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    line-height: 1;
+}
+
+.brand-mark {
+    display: block;
+    width: 208px;
+    height: 46px;
+    overflow: hidden;
+    background: url(../images/jhu-logo-interior.png) center center no-repeat;
+    background-size: cover;
+}
+
+.brand-mark:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+
+.site-masthead {
+    padding: 36px 0;
+}
+
+.site-utility a {
+    font-size: 15px;
+    font-weight: bold;
+    color: #B4B2AD;
+}
+
+
+/*===========================================================
+    ^Footer
+===========================================================*/
+.site-footer {
+    padding: 48px 0;
+}
+
+.footer-contact p {
+    margin-bottom: 9px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #b4b2ad;
+}
+
+
+/*===========================================================
+    ^Page
+===========================================================*/
+.page .site-masthead {
+    position: relative;
+    z-index: 2;
+    background-color: #fffffe;
+    box-shadow: 0px 1px 3px 0px #E5E2E0;
+}
+
+.page .site-utility {
+    padding-top: 12px;
+    text-align: right;
+}
+
+.page .site-utility li {
+    margin-left: 28px;
+}
+
+.page .site-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 24px;
+    background-color: #f8f7f6;
+}
+
+.page .entry-header {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.page .menu-toggle {
+    position: absolute;
+
+}
+
+.page .guideline-item {
+    margin-bottom: 48px;
+}
+
+.page .guideline-item .example-caption {
+    overflow: hidden;
+}
+
+.page .guideline-item .example-caption-id {
+    float: left;
+    width: 22px;
+}
+
+.page .guideline-item .example-caption-text {
+    overflow: hidden;
+    padding-left: 9px
+}
+
+.page .dos {
+    padding-top: 26px;
+    padding-left: 0;
+}
+
+
+/*===========================================================
+    ^Home
+===========================================================*/
+.home .site-masthead {
+    height: 100%;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.home .brand-column {
+    position: relative;
+    height: 100%;
+    background-color: #002d72
+}
+
+.home .nav-column {
+    height: 100%;
+}
+
+.home .brand-column:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -500%;
+    width: 500%;
+    height: 100%;
+    background-color: #002d72
+}
+
+.home .masthead-brand,
+.home .site-nav {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-60%);
+            transform: translateY(-60%);
+}
+
+.home .site-nav {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.home .masthead-brand {
+    display: block;
+    float: none;
+    margin: 0 auto;
+}
+
+.home .masthead-brand .brand-mark {
+    width: 376px;
+    height: 177px;
+    margin: 0 auto 60px;
+    background-image: url(../images/jhu-logo-home.png);
+}
+
+.home .masthead-brand .brand-tagline {
+    width: 376px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.home .masthead-brand .brand-tagline p {
+    font-weight: 700;
+}
+
+.home .site-nav {
+    width: 376px;
+    margin: 0 auto;
+}
+
+.home .site_nav-heading {
+    margin-bottom: 18px;
+}
+
+.home .site-content {
+    padding-top: 48px;
+    padding-bottom: 60px;
+}
+
+.home .home_media {
+    margin-bottom: 126px;
+}
+
+.home .home_media:last-child {
+    margin-bottom: 0;
+}
+
+.home .home_media .media-text {
+    padding-left: 0
+}

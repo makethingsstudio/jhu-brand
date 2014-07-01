@@ -8,44 +8,37 @@
  */
 ?>
 
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="ie ie-no-support" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 7]>         <html class="ie ie7" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 8]>         <html class="ie ie8" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 9]>         <html class="ie ie9" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 9]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
-	<head>
-		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><?php wp_title( ); ?></title>
-		<meta name="viewport" content="width=device-width" />
-		<!--[if lt IE 9]>
-			<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
-		<![endif]-->
-		<?php wp_head(); ?>
-	</head>
-	<body <?php body_class(); ?>>
-		<div class="site">
+<!doctype html>
+<html class="no-js" <?php language_attributes(); ?>>
+    <head>
+        <?php get_template_part('template-part', 'meta' ); ?>
+    </head>
 
-			<header class="site-header">
+    <body <?php body_class('site'); ?>>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="off-canvas-wrap" data-offcanvas>
+            <div class="inner-wrap">
+                <header class="site-masthead" role="banner">
+                    <div class="row">
+                        <div class="masthead-brand columns medium-3">
+                            <h1 class="brand-logo">
+                                <a class="brand-mark" href="/">Johns Hopkins University</a>
+                            </h1>
+                        </div>
+                        <nav class="site-utility columns medium-5" role="navigation">
+                            <ul class="nav utility_nav">
+                                <li><a href="#" title="Download Guidelines">Guidelines</a></li>
+                                <li><a href="#" title="Download Logos">Logos</a></li>
+                                <li><a href="#" title="Contact Us">Contact Us</a></li>
+                            </ul>
+                        </nav><!-- /.site-navigation -->
+                    </div>
+                </header><!-- /.site-masthead -->
 
-				<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>">
-					<h1 class="blog-name"><?php bloginfo( 'name' ); ?></h1>
-					<div class="blog-description"><?php bloginfo( 'description' ); ?></div>
-				</a>
-
-				<div class="menu"><?php
-
-					$nav_menu = wp_nav_menu(
-						array(
-							'container' => 'nav',
-							'container_class' => 'main-menu',
-							'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-							'theme_location' => 'main-menu',
-							'fallback_cb' => '__return_false',
-						)
-					); ?>
-
-				</div>
-
-			</header>
+                <aside class="left-off-canvas-menu site-nav" role="navigation">
+                  <ul class="off-canvas-list site_nav nav nav--stack">
+                    <?php get_template_part('template-part', 'site_nav'); ?>
+                  </ul>
+                </aside>

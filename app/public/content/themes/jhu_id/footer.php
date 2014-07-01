@@ -8,13 +8,48 @@
  */
 ?>
 
-				<ul class="footer-widgets"><?php
-					if ( function_exists( 'dynamic_sidebar' ) ) :
-						dynamic_sidebar( 'footer-sidebar' );
-					endif; ?>
-				</ul>
+                <footer class="site-footer row" role="footer">
+                    <div class="footer-brand columns medium-3 medium-offset-1">
+                        <h1 class="brand-logo">
+                            <a class="brand-mark" href="#">Johns Hopkins University</a>
+                        </h1>
+                    </div>
+                    <nav class="footer-nav columns medium-5">
+                        <ul class="nav footer_nav">
+                           <?php get_template_part('template-part', 'site_nav'); ?>
+                       </ul>
+                    </nav><!-- /.footer-nav -->
+                    <div class="footer-contact columns medium-2 end">
+                        <p>Johns Hopkins University<br>
+                            Office of Communications</p>
+                        <p>3910 Keswick Road, Suite N2600<br>
+                            Baltimore, MD 21211</p>
+                        <p>443-997-0170 (main)<br>
+                            443-997-9009 (media)</p>
+                    </div><!-- /.footer-contact -->
+                </footer><!-- /.site-footer -->
+                <a class="exit-off-canvas"></a>
+            </div><!-- /.inner-wrap -->
+        </div><!-- /.off-canvas-wrap -->
 
-			</div>
-		<?php wp_footer(); ?>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js /content/themes/jhu_id/scripts/main.js -->
+        <!-- bower:js -->
+        <script src="/content/themes/jhu_id/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/foundation/js/vendor/fastclick.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/foundation/js/foundation.min.js"></script>
+        <!-- endbower -->
+        <script src="/content/themes/jhu_id/scripts/main.js"></script>
+        <!-- endbuild -->
 	</body>
 </html>

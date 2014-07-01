@@ -6,36 +6,169 @@
  * @subpackage jhu_id
  * @since jhu_id 1.0
  */
+?>
 
-get_header(); ?>
+<?php get_header('homepage'); ?>
+    <?php
+        if ( have_posts() ) : the_post();
+            if (has_post_thumbnail()) {
+                $post_thumbnail_id = get_post_thumbnail_id();
+                $post_thumbnail_url = wp_get_attachment_image_src($post_thumbnail_id, 'full');
+                $billobardUrl = $post_thumbnail_url[0];
 
-	<div class="home-widgets"><?php
-		if ( function_exists( 'dynamic_sidebar' ) ) :
-			dynamic_sidebar( 'home-sidebar' );
-		endif; ?>
-	</div>
+            }
+        ?>
+    <div class="billboard billboard--fullheight region">
+        <header class="site-masthead row" role="banner">
+            <div class="columns medium-6 brand-column">
+                <div class="masthead-brand">
+                    <h1 class="brand-logo">
+                        <a class="brand-mark" href="#">Johns Hopkins University</a>
+                    </h1>
+                    <div class="brand-tagline">
+                        <?php the_content(); ?>
+                    </div><!-- /.masthead-tagline -->
+                </div><!-- /.masthead-brand -->
+            </div>
+            <div class="columns medium-6 nav-column">
+                <nav class="site-nav" role="navigation">
+                    <h2 class="site_nav-heading">Brand Guidelines</h2>
 
-	<section class="page-content primary" role="main">
-		<?php
-			if ( have_posts() ) :
+                    <ul class="nav site_nav">
+                        <?php get_template_part('template-part', 'site_nav'); ?>
+                    </ul>
+                </nav><!-- /.site-nav -->
+            </div>
+        </header><!-- /.site-masthead -->
+        <div class="billboard-background" style="background-image: url(<?php echo $billobardUrl; ?>);"></div>
+    </div><!-- /.billboard billboard-fullheight -->
+        <?php
+        endif;
+    ?>
+    <main class="site-content region">
+    <?php
+        $counter = 0;
+        if (have_rows('home_regions')):
+            while(the_repeater_field('home_regions')):
+                $counter++;
+    ?>
 
-				while ( have_posts() ) : the_post();
+<?php
+                if ($counter % 2 == 0):
+?>
+                    <div class="locale row media home_media" id="">
+                        <header class="media-header medium-offset-1">
+                            <h2 class="media-heading">
+                                <?php the_sub_field('heading'); ?>
+                            </h2>
+                        </header>
+                        <?php
+                        if(have_rows('media')):
+                            while ( have_rows('media') ) : the_row(); ?>
 
-					get_template_part( 'loop', get_post_format() );
 
-				endwhile;
+                            <?php
+                                if (get_row_layout() === 'html'): ?>
+                                <figure class="media-attach columns medium-5">
+                                    <?php
+                                    the_sub_field('html')
+                                    ?>
+                                </figure><!-- /.media-attach -->
+                            <?php
+                                elseif(get_row_layout() === 'image'):
+                                    $image = get_sub_field('image');
+                                    if(!empty(image)):
+                                        $url = $image['url'];
+                                        $title = $image['title'];
+                                        $alt = $image['alt'];
+                            ?>
 
-			else :
+                                <figure class="media-attach columns medium-5">
+                                    <img class="media-src" src="<?php echo $url ?>" alt="<?php echo  $alt ?>">
+                                </figure><!-- /.media-attach -->
+                            <?php
+                                    endif;
+                            ?>
+                            <?php
+                                endif;
+                            ?>
 
-				get_template_part( 'loop', 'empty' );
+                        <?php
+                            endwhile;
+                        ?>
 
-			endif;
-		?>
-		<div class="pagination">
+                    <?php
+                        endif;
+                    ?>
 
-			<?php get_template_part( 'template-part', 'pagination' ); ?>
+                        <div class="media-text columns medium-5 end">
+                            <div class="media-content">
+                                <?php the_sub_field('content') ?>
+                            </div><!-- /.media-content -->
+                        </div><!-- /.media-text -->
+                    </div><!-- /.locale media home_media -->
+<?php
+                else:
+?>
+                        <div class="locale row media home_media" id="">
+                            <header class="media-header medium-offset-1">
+                                <h2 class="media-heading">
+                                    <?php the_sub_field('heading'); ?>
+                                </h2>
+                            </header>
+                            <?php
+                            if(have_rows('media')):
+                                while ( have_rows('media') ) : the_row(); ?>
 
-		</div>
-	</section>
+
+                                <?php
+                                    if (get_row_layout() === 'html'): ?>
+                                    <figure class="media-attach columns medium-5 medium-push-6">
+                                        <?php
+                                        the_sub_field('html')
+                                        ?>
+                                    </figure><!-- /.media-attach -->
+                                <?php
+                                    elseif(get_row_layout() === 'image'):
+                                        $image = get_sub_field('image');
+                                        if(!empty(image)):
+                                            $url = $image['url'];
+                                            $title = $image['title'];
+                                            $alt = $image['alt'];
+                                ?>
+
+                                    <figure class="media-attach columns medium-5 medium-push-6">
+                                        <img class="media-src" src="<?php echo $url ?>" alt="<?php echo  $alt ?>">
+                                    </figure><!-- /.media-attach -->
+                                <?php
+                                        endif;
+                                ?>
+                                <?php
+                                    endif;
+                                ?>
+
+                            <?php
+                                endwhile;
+                            ?>
+
+                        <?php
+                            endif;
+                        ?>
+
+                            <div class="media-text columns medium-5 medium-pull-6">
+                                <div class="media-content">
+                                    <?php the_sub_field('content') ?>
+                                </div><!-- /.media-content -->
+                            </div><!-- /.media-text -->
+                        </div><!-- /.locale media home_media -->
+<?php
+                endif;
+?>
+
+    <?php
+            endwhile;
+        endif;
+    ?>
+    </main><!-- /.site-content -->
 
 <?php get_footer(); ?>

@@ -7,43 +7,166 @@
  * @subpackage jhu_id
  * @since jhu_id 1.0
  */
+ ?>
 
-get_header(); ?>
 
-	<section class="page-content primary" role="main">
+<?php
+    get_header();
 
-		<?php
-			if ( have_posts() ) : the_post();
+    $pageID = get_the_id();
 
-				get_template_part( 'loop' ); ?>
+    $sectionArgs = array(
+        'sort_order' => 'ASC',
+        'sort_column' => 'menu_order',
+        'hierarchical' => 1,
+        'exclude' => '77',
+        'include' => '',
+        'meta_key' => '',
+        'meta_value' => '',
+        'authors' => '',
+        'child_of' => 0,
+        'parent' => $pageID,
+        'exclude_tree' => '',
+        'number' => '',
+        'offset' => 0,
+        'post_type' => 'page',
+        'post_status' => 'publish'
+    );
 
-				<aside class="post-aside"><?php
+    $sections = get_pages($sectionArgs);
 
-					wp_link_pages(
-						array(
-							'before'           => '<div class="linked-page-nav"><p>' . sprintf( __( '<em>%s</em> is separated in multiple parts:', 'jhu_id' ), get_the_title() ) . '<br />',
-							'after'            => '</p></div>',
-							'next_or_number'   => 'number',
-							'separator'        => ' ',
-							'pagelink'         => __( '&raquo; Part %', 'jhu_id' ),
-						)
-					); ?>
+    $pageNav;
+    $guidelines;
 
-					<?php
-						if ( comments_open() || get_comments_number() > 0 ) :
-							comments_template( '', true );
-						endif;
-					?>
+    foreach ( $sections as $section ):
+        // navigation
+        $sectionID = $section->ID;
+        $option = '<li class="site_nav-item">';
+        $option .= '<a class="site_nav-link" href="#' . get_the_slug($sectionID) . '">';
+        $option .= $section->post_title;
+        $option .= '</a>';
+        $option .= '</li>';
+        $pageNav .= $option;
 
-				</aside><?php
+        if (have_rows('example', $sectionID)):
+            $examples;
+            $captions;
+            $row = 1;
+            while (have_rows('example', $sectionID)) : the_row();
+                $exampleID = get_the_slug($sectionID) . '-' . $row;
+                $example = '';
+                $caption = '';
+                if (get_row_layout() === 'html'):
+                    $html = get_sub_field('html');
+                    $example = '<figure class="example-item example-html" id="example-' . $exampleID . '">';
+                    $example .= $html;
+                    if (get_sub_field('caption')):
+                        $example .= '<figcaption class="example-id">' . $row . '</figcaption>';
+                        $caption = '<a class="example-caption" href="#' . $exampleID . '">';
+                        $caption .= '<span class="example-caption-id">' . $row . '</span>';
+                        $caption .= '<span class="example-caption-text">' . get_sub_field('caption') . '</span>';
+                        $caption .= '</a>';
+                    endif;
+                    $example .= '</figure>';
+                elseif (get_row_layout() === 'image'):
+                    $image = get_sub_field('image');
+                    $example = '<figure class="example-item example-photo" id="example-' . $exampleID . '">';
+                    $example .= '<img class="example-src" src="' . $image["url"] . '" alt="' . $image["alt"] . '">';
 
-			else :
+                    if (get_sub_field('caption')):
+                        $example .= '<figcaption class="example-id">' . $row . '</figcaption>';
+                        $caption = '<a class="example-caption" href="#' . $exampleID . '">';
+                        $caption .= '<span class="example-caption-id">' . $row . '</span>';
+                        $caption .= '<span class="example-caption-text">' . get_sub_field('caption') . '</span>';
+                        $caption .= '</a>';
+                    endif;
+                    $example .= '</figure>';
 
-				get_template_part( 'loop', 'empty' );
+                else:
+                    $video = get_sub_field('video');
+                    $example = '<figure class="example-item example-video" id="example-' . $exampleID . '">';
+                    $example .= $video_code;
+                    if (get_sub_field('caption')):
+                        $example .= '<figcaption class="example-id">' . $row . '</figcaption>';
+                        $caption = '<a class="example-caption" href="#' . $exampleID . '">';
+                        $caption .= '<span class="example-caption-id">' . $row . '</span>';
+                        $caption .= '<span class="example-caption-text">' . get_sub_field('caption') . '</span>';
+                        $caption .= '</a>';
+                    endif;
+                    $example .= '</figure>';
+                endif;
+                $examples .= $example;
+                $captions .= $caption;
+                $row++;
+            endwhile;
+        else:
+            $example = '';
+        endif;
 
-			endif;
-		?>
+        if ($examples != ''):
+            $attachClass = 'columns medium-push-5 medium-7';
+            $textClass = 'columns medium-pull-7 medium-5';
+        else:
+            $attachClass = '';
+            $textClass = 'columns medium-10';
+        endif;
 
-	</section>
+        $guideline = '<div class="locale guideline-item row" id="' . get_the_slug($sectionID) . '">';
+        if ($examples != ''):
+            $guideline .= '<div class="media-attach ' . $attachClass . '">';
+            $guideline .= $examples;
+            $guideline .= '</div> <!-- /.media-attach -->';
+        endif;
+        $guideline .= '<div class="media-text ' . $textClass . '">';
+        $guideline .= '<header class="media-header"><h2 class="media-heading">';
+        $guideline .= $section->post_title;
+        $guideline .= '</h2></header>';
+        $guideline .= '<div class="media-content">';
+        $guideline .= apply_filters('the_content', $section->post_content);
+        if ($captions != ''):
+            $guideline .= '<div class="example-captions">' . $captions . '</div>';
+        endif;
+        $guideline .= '</div>';
+        $guideline .= '</div> <!-- /.media-text -->';
+        $guideline .= '</div> <!-- /.locale.guideline-item#' . get_the_slug($sectionID) . ' -->';
+        $examples = '';
+        $captions = '';
+        $guidelines .= $guideline;
+
+    endforeach;
+
+?>
+
+    <main class="site-content page region">
+
+        <div class="row">
+            <article class="locale guideline entry" id="guideline-<?php echo get_the_slug(); ?>">
+                <header class="entry-header">
+                    <a class="left-off-canvas-toggle menu-toggle" href="#">Menu</a>
+                    <h1 class="entry-heading medium-push-1">
+                        <?php the_title(); ?>
+                    </h1>
+                </header>
+
+                <div class="uno columns medium-push-3  medium-9">
+                    <?php echo $guidelines; ?>
+                </div><!-- /.uno -->
+
+                <aside class="dos columns medium-pull-9 medium-2">
+                    <nav class="page-nav">
+                        <ul class="nav nav--stack page_nav">
+                            <?php echo $pageNav; ?>
+                        </ul><!-- /.nav nav--stack page_nav -->
+                    </nav><!-- /.page-nav -->
+                </aside><!-- /.dos -->
+
+            </article><!-- /.locale guideline -->
+        </div>
+
+    </main>
+
+    <?php
+
+    ?>
 
 <?php get_footer(); ?>

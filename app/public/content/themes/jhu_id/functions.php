@@ -86,10 +86,10 @@ add_action( 'init', 'jhu_id_editor_style' );
  * @return void
  */
 function jhu_id_enqueue_scripts() {
-	wp_enqueue_style( 'jhu_id-styles', get_stylesheet_uri(), array(), '1.0' );
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0', true );
-	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+	// wp_enqueue_style( 'jhu_id-styles', get_stylesheet_uri(), array(), '1.0' );
+	// wp_enqueue_script( 'jquery' );
+	// wp_enqueue_script( 'default-scripts', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0', true );
+	// if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'jhu_id_enqueue_scripts' );
 
