@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="/content/themes/jhu_id/bower_components/foundation/css/foundation.css">
 <link rel="stylesheet" href="/content/themes/jhu_id/styles/fonts/gentona/gentona.css">
 <link rel="stylesheet" href="/content/themes/jhu_id/styles/fonts/titling-gothic/titling-gothic.css">
+<link rel="stylesheet" href="/content/themes/jhu_id/styles/fonts/quadon/quadon.css">
+<link rel="stylesheet" href="/content/themes/jhu_id/styles/fonts/arnhem/arnhem.css">
 <!-- endbower -->
 <link rel="stylesheet" href="/content/themes/jhu_id/styles/main.css">
 <!-- endbuild -->
