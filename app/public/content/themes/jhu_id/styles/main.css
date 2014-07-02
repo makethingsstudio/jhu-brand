@@ -108,6 +108,12 @@ body {
     background-color: #7b7ca6;
 }
 
+.menu-toggle:hover,
+.menu-toggle:focus {
+    color: #fff;
+    background-color: #002d72;
+}
+
 .entry-heading {
     font-family: 'quadon', serif;
     font-weight: 500;
@@ -221,6 +227,21 @@ body {
     left: 0;
     width: 12px;
     height: 18px;
+}
+
+/*  ^Offscreen ====    */
+.site_nav.off-canvas-list > li {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.site_nav.off-canvas-list > li > a {
+    padding: 18px;
+}
+
+.site_nav.off-canvas-list .site_nav-color {
+    top: 0px;
+    height: 100%;
 }
 
 
