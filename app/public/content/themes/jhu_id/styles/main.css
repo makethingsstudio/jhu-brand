@@ -1,6 +1,25 @@
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
+/*===========================================================
+    ^Overrides
+===========================================================*/
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
+    background: #fff;
+    border: 1px solid #2C2C33;
+    box-shadow: none;
+}
+
+.button, button {
+    background-color: #002d72;
+}
+
+
+/*===========================================================
+    ^Helpers
+===========================================================*/
 
 /*
  * Hide visually and from screen readers: h5bp.com/u
@@ -575,4 +594,38 @@ body {
 
 .home .home_media .media-text {
     padding-left: 0
+}
+
+
+
+/*===========================================================
+    ^Contact
+===========================================================*/
+.page .gform_wrapper .gfield_description {
+    padding: 0;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.page .gform_wrapper .gfield,
+.page .gform_wrapper .top_label li.gfield.gf_left_half,
+.page .gform_wrapper .top_label li.gfield.gf_right_half {
+    margin-bottom: 18px;
+}
+
+.page .gform_wrapper .top_label .gfield_label {
+    margin-top: 0
+}
+
+.page .gform_wrapper .gform_footer {
+    padding: 15px;
+    background-color: #e5e2e0;
+}
+
+.page .gform_footer .button {
+    margin: 0;
+}
+
+.page .gform_footer .button:hover {
+    background-color: #2c2c33;
 }
