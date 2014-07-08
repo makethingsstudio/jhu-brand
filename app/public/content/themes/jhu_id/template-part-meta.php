@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="/content/themes/jhu_id/styles/fonts/quadon/quadon.css">
 <link rel="stylesheet" href="/content/themes/jhu_id/styles/fonts/arnhem/arnhem.css">
 <!-- endbower -->
+<link rel="stylesheet" href="/ts/css/typeshow.css" type="text/css" />
 <link rel="stylesheet" href="/content/themes/jhu_id/bower_components/fancybox/source/jquery.fancybox.css">
 <link rel="stylesheet" href="/content/themes/jhu_id/styles/main.css">
 <!-- endbuild -->

@@ -629,3 +629,10 @@ body {
 .page .gform_footer .button:hover {
     background-color: #2c2c33;
 }
+
+
+.page .ts_fonts,
+.page .ts_themes,
+.page .ts_font_info {
+    display: none;
+}

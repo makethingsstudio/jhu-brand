@@ -53,6 +53,7 @@
         <script src="/content/themes/jhu_id/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
 
         <!-- endbower -->
+        <script src="/ts/js/jquery.typeshow.js"></script>
         <script src="/content/themes/jhu_id/scripts/main.js"></script>
         <!-- endbuild -->
 	</body>
