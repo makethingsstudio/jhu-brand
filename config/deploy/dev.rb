@@ -14,7 +14,7 @@ role  :app, dest_server
 role  :web, dest_server
 role  :db,  dest_server, :primary => true
 
-set :keep_releases, 2
+set :keep_releases, 3
 
 set(:deploy_to) {"/home/makethingsstudio/hosts/clients.make-things.com/#{project_id}/#{rails_env}/"}
 
