@@ -32,6 +32,7 @@
             </div><!-- /.inner-wrap -->
         </div><!-- /.off-canvas-wrap -->
 
+        <?php get_template_part('template-part', 'logos') ?>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -48,7 +49,12 @@
         <script src="/content/themes/jhu_id/bower_components/jquery/dist/jquery.js"></script>
         <script src="/content/themes/jhu_id/bower_components/foundation/js/vendor/fastclick.js"></script>
         <script src="/content/themes/jhu_id/bower_components/foundation/js/foundation.min.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/fancybox/source/jquery.fancybox.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
+
         <!-- endbower -->
+        <script src="/ts/js/jquery.typeshow.js"></script>
         <script src="/content/themes/jhu_id/scripts/main.js"></script>
         <!-- endbuild -->
 	</body>

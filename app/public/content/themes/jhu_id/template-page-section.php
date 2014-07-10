@@ -41,8 +41,9 @@
     foreach ( $sections as $section ):
         // navigation
         $sectionID = $section->ID;
+        $exampleID = get_the_slug($sectionID);
         $option = '<li class="site_nav-item">';
-        $option .= '<a class="site_nav-link" href="#' . get_the_slug($sectionID) . '">';
+        $option .= '<a class="site_nav-link" href="#' . $exampleID . '">';
         $option .= $section->post_title;
         $option .= '</a>';
         $option .= '</li>';
@@ -53,16 +54,16 @@
             $captions;
             $row = 1;
             while (have_rows('example', $sectionID)) : the_row();
-                $exampleID = get_the_slug($sectionID) . '-' . $row;
+                $exampleItem = get_the_slug($sectionID) . '-' . $row;
                 $example = '';
                 $caption = '';
                 if (get_row_layout() === 'html'):
                     $html = get_sub_field('html');
-                    $example = '<figure class="example-item example-html" id="example-' . $exampleID . '">';
+                    $example = '<figure class="example-item example-html" id="example-' . $exampleItem . '">';
                     $example .= $html;
                     if (get_sub_field('caption')):
                         $example .= '<figcaption class="example-id">' . $row . '</figcaption>';
-                        $caption = '<a class="example-caption" href="#' . $exampleID . '">';
+                        $caption = '<a class="example-caption" href="#' . $exampleItem . '">';
                         $caption .= '<span class="example-caption-id">' . $row . '</span>';
                         $caption .= '<span class="example-caption-text">' . get_sub_field('caption') . '</span>';
                         $caption .= '</a>';
@@ -70,12 +71,14 @@
                     $example .= '</figure>';
                 elseif (get_row_layout() === 'image'):
                     $image = get_sub_field('image');
-                    $example = '<figure class="example-item example-photo" id="example-' . $exampleID . '">';
+                    $example = '<figure class="example-item example-photo" id="example-' . $exampleItem . '">';
+                    $example .= '<a class="example-lightbox" href="' . $image["url"] . '" rel="group-' . $exampleID  . '">';
                     $example .= '<img class="example-src" src="' . $image["url"] . '" alt="' . $image["alt"] . '">';
+                    $example .= '</a>';
 
                     if (get_sub_field('caption')):
                         $example .= '<figcaption class="example-id">' . $row . '</figcaption>';
-                        $caption = '<a class="example-caption" href="#' . $exampleID . '">';
+                        $caption = '<a class="example-caption" href="#' . $exampleItem . '">';
                         $caption .= '<span class="example-caption-id">' . $row . '</span>';
                         $caption .= '<span class="example-caption-text">' . get_sub_field('caption') . '</span>';
                         $caption .= '</a>';
@@ -84,11 +87,11 @@
 
                 else:
                     $video = get_sub_field('video');
-                    $example = '<figure class="example-item example-video" id="example-' . $exampleID . '">';
+                    $example = '<figure class="example-item example-video" id="example-' . $exampleItem . '">';
                     $example .= $video_code;
                     if (get_sub_field('caption')):
                         $example .= '<figcaption class="example-id">' . $row . '</figcaption>';
-                        $caption = '<a class="example-caption" href="#' . $exampleID . '">';
+                        $caption = '<a class="example-caption" href="#' . $exampleItem . '">';
                         $caption .= '<span class="example-caption-id">' . $row . '</span>';
                         $caption .= '<span class="example-caption-text">' . get_sub_field('caption') . '</span>';
                         $caption .= '</a>';
@@ -101,6 +104,23 @@
             endwhile;
         else:
             $example = '';
+        endif;
+
+        $downloads = '';
+
+        if (have_rows('downloads', $sectionID)):
+            $row = 1;
+            while (have_rows('downloads', $sectionID)):
+                the_row();
+                $downloadID = $exampleID . '-' . $row;
+                $download = '';
+                $row++;
+
+                $download .= '<a class="download-item" id="download-' . $downloadID . '" href="' . get_sub_field('asset_link') . '" class="download-link">';
+                $download .= get_sub_field('asset_title');
+                $download .= '</a>';
+                $downloads .= $download;
+            endwhile;
         endif;
 
         if ($examples != ''):
@@ -125,6 +145,9 @@
         $guideline .= apply_filters('the_content', $section->post_content);
         if ($captions != ''):
             $guideline .= '<div class="example-captions">' . $captions . '</div>';
+        endif;
+        if ($downloads != ''):
+            $guideline .= '<nav class="example-downloads">' . $downloads . '</nav>';
         endif;
         $guideline .= '</div>';
         $guideline .= '</div> <!-- /.media-text -->';

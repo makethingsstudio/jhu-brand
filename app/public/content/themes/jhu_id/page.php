@@ -9,40 +9,17 @@
 
 get_header(); ?>
 
-	<section class="page-content primary" role="main">
-
-		<?php
-			if ( have_posts() ) : the_post();
-
-				get_template_part( 'loop' ); ?>
-
-				<aside class="post-aside"><?php
-
-					wp_link_pages(
-						array(
-							'before'           => '<div class="linked-page-nav"><p>' . sprintf( __( '<em>%s</em> is separated in multiple parts:', 'jhu_id' ), get_the_title() ) . '<br />',
-							'after'            => '</p></div>',
-							'next_or_number'   => 'number',
-							'separator'        => ' ',
-							'pagelink'         => __( '&raquo; Part %', 'jhu_id' ),
-						)
-					); ?>
-
-					<?php
-						if ( comments_open() || get_comments_number() > 0 ) :
-							comments_template( '', true );
-						endif;
-					?>
-
-				</aside><?php
-
-			else :
-
-				get_template_part( 'loop', 'empty' );
-
-			endif;
-		?>
-
-	</section>
+    <main class="site-content page region" role="main">
+        <div class="row">
+<?php
+    if(have_posts()):
+        the_post();
+        get_template_part('loop', 'page');
+    else:
+        get_template_part('loop', 'empty');
+    endif;
+?>
+        </div>
+    </main>
 
 <?php get_footer(); ?>

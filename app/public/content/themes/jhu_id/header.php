@@ -12,6 +12,19 @@
 <html class="no-js" <?php language_attributes(); ?>>
     <head>
         <?php get_template_part('template-part', 'meta' ); ?>
+        <?php
+            if (get_field('section_color')):
+                $color = get_field('section_color');
+            endif;
+        ?>
+        <style type="text/css">
+        .menu-toggle,
+        .menu-toggle:before,
+        .left-off-canvas-menu,
+        .entry-header[data-magellan-expedition="fixed"] {
+            background-color: <?php echo $color ?>;
+        }
+        </style>
     </head>
 
     <body <?php body_class('site'); ?>>
@@ -28,11 +41,15 @@
                             </h1>
                         </div>
                         <nav class="site-utility columns medium-5" role="navigation">
-                            <ul class="nav utility_nav">
-                                <li><a href="#" title="Download Guidelines">Guidelines</a></li>
-                                <li><a href="#" title="Download Logos">Logos</a></li>
-                                <li><a href="#" title="Contact Us">Contact Us</a></li>
-                            </ul>
+                        <?php
+                            $utility_args = array(
+                                'theme_location'  => 'utility-menu',
+                                'menu_class'      => 'nav utility_nav',
+                                'menu_id'         => '',
+                                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                            );
+                            wp_nav_menu($utility_args);
+                        ?>
                         </nav><!-- /.site-navigation -->
                     </div>
                 </header><!-- /.site-masthead -->

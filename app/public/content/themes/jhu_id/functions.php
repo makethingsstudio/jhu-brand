@@ -12,68 +12,16 @@
 	Theme support, standard settings, menus and widgets
 \******************************************************************************/
 
-add_theme_support( 'post-formats', array( 'image', 'quote', 'status', 'link' ) );
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'automatic-feed-links' );
-
-$custom_header_args = array(
-	'width'         => 980,
-	'height'        => 300,
-	'default-image' => get_template_directory_uri() . '/images/header.png',
-);
-add_theme_support( 'custom-header', $custom_header_args );
-
-/**
- * Print custom header styles
- * @return void
- */
-function jhu_id_custom_header() {
-	$styles = '';
-	if ( $color = get_header_textcolor() ) {
-		echo '<style type="text/css"> ' .
-				'.site-header .logo .blog-name, .site-header .logo .blog-description {' .
-					'color: #' . $color . ';' .
-				'}' .
-			 '</style>';
-	}
-}
-add_action( 'wp_head', 'jhu_id_custom_header', 11 );
-
-$custom_bg_args = array(
-	'default-color' => 'fba919',
-	'default-image' => '',
-);
-add_theme_support( 'custom-background', $custom_bg_args );
-
-register_nav_menu( 'main-menu', __( 'Your sites main menu', 'jhu_id' ) );
-
-if ( function_exists( 'register_sidebars' ) ) {
-	register_sidebar(
-		array(
-			'id' => 'home-sidebar',
-			'name' => __( 'Home widgets', 'jhu_id' ),
-			'description' => __( 'Shows on home page', 'jhu_id' )
-		)
-	);
-
-	register_sidebar(
-		array(
-			'id' => 'footer-sidebar',
-			'name' => __( 'Footer widgets', 'jhu_id' ),
-			'description' => __( 'Shows in the sites footer', 'jhu_id' )
-		)
-	);
-}
-
-if ( ! isset( $content_width ) ) $content_width = 650;
+register_nav_menu( 'utility-menu', __( 'Utility menu seen on internal pages of site', 'jhu_id' ) );
 
 /**
  * Include editor stylesheets
  * @return void
  */
 function jhu_id_editor_style() {
-    add_editor_style( 'css/wp-editor-style.css' );
+    add_editor_style( 'styles/wp-editor-style.css' );
 }
+
 add_action( 'init', 'jhu_id_editor_style' );
 
 
@@ -92,25 +40,3 @@ function jhu_id_enqueue_scripts() {
 	// if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'jhu_id_enqueue_scripts' );
-
-
-/******************************************************************************\
-	Content functions
-\******************************************************************************/
-
-/**
- * Displays meta information for a post
- * @return void
- */
-function jhu_id_post_meta() {
-	if ( get_post_type() == 'post' ) {
-		echo sprintf(
-			__( 'Posted %s in %s%s by %s. ', 'jhu_id' ),
-			get_the_time( get_option( 'date_format' ) ),
-			get_the_category_list( ', ' ),
-			get_the_tag_list( __( ', <b>Tags</b>: ', 'jhu_id' ), ', ' ),
-			get_the_author_link()
-		);
-	}
-	edit_post_link( __( ' (edit)', 'jhu_id' ), '<span class="edit-link">', '</span>' );
-}
