@@ -520,7 +520,7 @@ body {
 }
 
 .color {
-    padding-left: 50%;
+    padding-left: 30%;
 }
 
 .color:before {
@@ -530,7 +530,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
-    width: 50%;
+    width: 30%;
     height: 100%;
     border: 2px solid #F8F7F6;
 }
@@ -568,6 +568,26 @@ body {
     margin-left: 3px;
 }
 
+.colors--sm {
+    display: inline-block;
+    width: 50%;
+}
+
+.colors--sm .color-list dt,
+.colors--sm .color-list dd {
+    font-family: helvetica, arial, verdana, sans-serif;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.colors--sm .color-list dt {
+    margin-left: 6px
+}
+
+.colors--sm .color-list dt:first-child {
+    margin: 0;
+}
+
 .color-white:before {
     background-color: #fff;
 }
@@ -578,6 +598,14 @@ body {
 
 .color-288:before {
     background-color: #002D72;
+}
+
+.color-7501c:before {
+    background-color: #d9c89e;
+}
+
+.color-7407c:before {
+    background-color: #CBA052
 }
 
 
@@ -696,8 +724,16 @@ body {
     margin-bottom: 0;
 }
 
+.page .guideline-item .colors--sm {
+    width: 49%;
+}
+
 .page .guideline-item .color {
     margin-bottom: 18px;
+}
+
+.page .guideline-item .colors--sm .color {
+    margin-bottom: 9px;
 }
 
 .page .guideline-item .color:last-child {
