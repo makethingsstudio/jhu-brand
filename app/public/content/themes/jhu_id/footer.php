@@ -32,6 +32,7 @@
             </div><!-- /.inner-wrap -->
         </div><!-- /.off-canvas-wrap -->
 
+        <?php get_template_part('template-part', 'logos') ?>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

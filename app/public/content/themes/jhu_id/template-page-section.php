@@ -41,8 +41,9 @@
     foreach ( $sections as $section ):
         // navigation
         $sectionID = $section->ID;
+        $exampleID = get_the_slug($sectionID);
         $option = '<li class="site_nav-item">';
-        $option .= '<a class="site_nav-link" href="#' . get_the_slug($sectionID) . '">';
+        $option .= '<a class="site_nav-link" href="#' . $exampleID . '">';
         $option .= $section->post_title;
         $option .= '</a>';
         $option .= '</li>';
@@ -53,7 +54,6 @@
             $captions;
             $row = 1;
             while (have_rows('example', $sectionID)) : the_row();
-                $exampleID = get_the_slug($sectionID);
                 $exampleItem = get_the_slug($sectionID) . '-' . $row;
                 $example = '';
                 $caption = '';
@@ -106,6 +106,23 @@
             $example = '';
         endif;
 
+        $downloads = '';
+
+        if (have_rows('downloads', $sectionID)):
+            $row = 1;
+            while (have_rows('downloads', $sectionID)):
+                the_row();
+                $downloadID = $exampleID . '-' . $row;
+                $download = '';
+                $row++;
+
+                $download .= '<a class="download-item" id="download-' . $downloadID . '" href="' . get_sub_field('asset_link') . '" class="download-link">';
+                $download .= get_sub_field('asset_title');
+                $download .= '</a>';
+                $downloads .= $download;
+            endwhile;
+        endif;
+
         if ($examples != ''):
             $attachClass = 'columns medium-push-5 medium-7';
             $textClass = 'columns medium-pull-7 medium-5';
@@ -128,6 +145,9 @@
         $guideline .= apply_filters('the_content', $section->post_content);
         if ($captions != ''):
             $guideline .= '<div class="example-captions">' . $captions . '</div>';
+        endif;
+        if ($downloads != ''):
+            $guideline .= '<nav class="example-downloads">' . $downloads . '</nav>';
         endif;
         $guideline .= '</div>';
         $guideline .= '</div> <!-- /.media-text -->';

@@ -1,6 +1,14 @@
 /*===========================================================
     ^Overrides
 ===========================================================*/
+ul.off-canvas-list li a {
+    border-color: rgba(38, 38, 38, .5);
+}
+
+.move-right .exit-off-canvas {
+    box-shadow: -4px 0 4px rgba(38, 38, 38, .25), 4px 0 4px rgba(38, 38, 38, .25);
+}
+
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
     padding-left: 15px;
     margin-bottom: 0;
@@ -14,6 +22,19 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
 
 .button, button {
     background-color: #002d72;
+}
+
+.entry-header[data-magellan-expedition],
+.entry-header[data-magellan-expedition-clone] {
+    padding: 0;
+    background-color: transparent;
+}
+
+.entry-header[data-magellan-expedition="fixed"] {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    background-color: #000;
 }
 
 
@@ -130,7 +151,7 @@ body {
 .menu-toggle:hover,
 .menu-toggle:focus {
     color: #fff;
-    background-color: #002d72;
+    background-color: #68ACE5;
 }
 
 .entry-heading {
@@ -367,7 +388,14 @@ body {
     display: block;
     margin-bottom: 9px;
     text-decoration: none;
-    color: #7b7ca6;
+    color: #7e7e7c;
+    cursor: default;
+}
+
+.example-caption:hover,
+.example-caption:focus {
+    color: #7e7e7c;
+    cursor: default;
 }
 
 .example-id,
@@ -387,12 +415,224 @@ body {
 }
 
 
+/*  ^Downloads
+===========================================================*/
+
+.example-downloads {
+    padding: 12px 15px;
+    background-color: #eeedeb;
+}
+
+.download-item {
+    display: block;
+    position: relative;
+    padding-left: 38px;
+    color: #7b7ca6;
+}
+
+.download-item:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #f8f7f6;
+
+}
+
+.download-item:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 14px;
+    height: 15px;
+    background: url(../images/icon-download@2x.png) center center no-repeat;
+    background-size: 100%;
+}
+
+.download-item:hover {
+    color: #2C2C33;
+}
+
+.download-item:hover:after {
+    background-image: url(../images/icon-download-hover@2x.png);
+}
+
+
+/*  ^Logos
+===========================================================*/
+.logos {
+    display: none;
+}
+
+.logos-preview {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.logos-images {
+    position: relative;
+    padding-top: 64.2%;
+}
+
+.logos-preview img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: opacity .3s ease-out;
+            transition: opacity .3s ease-out;
+}
+
+.logos-preview img.active {
+    display: block;
+    opacity: 1;
+}
+
+.logos h3 {
+    font-family: 'titling-gothic', sans-serif;
+    font-weight: normal;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-align: center;
+}
+
+.logos-links {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.logos-links ul {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.logos-links li {
+  list-style: none;
+}
+
+.logos-links a {
+  display: block;
+  color: #000;
+  padding: 4px 6px;
+  margin-bottom: 2px;
+}
+
+.logos-links a:hover {
+  text-decoration: none;
+  background-color: #efefef;
+}
+
+
+/*  ^Colors
+===========================================================*/
+.colors,
+.color {
+    position: relative;
+}
+
+.color {
+    padding-left: 30%;
+}
+
+.color:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 30%;
+    height: 100%;
+    border: 2px solid #F8F7F6;
+}
+
+.color-values {
+    position: relative;
+    overflow: hidden;
+}
+
+.color-list {
+    margin: 0 0 0 12px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.color-list dt,
+.color-list dd {
+    display: inline-block;
+    margin: 0;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.color-list dt {
+    margin-left: 9px;
+    font-weight: 700;
+    color: #7E7E7C;
+}
+
+.color-list dt:first-child {
+    margin: 0;
+}
+
+.color-list dd {
+    margin-left: 3px;
+}
+
+.colors--sm {
+    display: inline-block;
+    width: 50%;
+}
+
+.colors--sm .color-list dt,
+.colors--sm .color-list dd {
+    font-family: helvetica, arial, verdana, sans-serif;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.colors--sm .color-list dt {
+    margin-left: 6px
+}
+
+.colors--sm .color-list dt:first-child {
+    margin: 0;
+}
+
+.color-white:before {
+    background-color: #fff;
+}
+
+.color-black:before {
+    background-color: #000;
+}
+
+.color-288:before {
+    background-color: #002D72;
+}
+
+.color-7501c:before {
+    background-color: #d9c89e;
+}
+
+.color-7407c:before {
+    background-color: #CBA052
+}
+
 
 /*===========================================================
     ^Masthead
 ===========================================================*/
-
-
 .brand-logo {
     padding: 0;
     margin: 0;
@@ -495,6 +735,30 @@ body {
 .page .guideline-item .example-caption-text {
     overflow: hidden;
     padding-left: 9px
+}
+
+.page .guideline-item .download-item {
+    margin-bottom: 9px
+}
+
+.page .guideline-item .download-item:last-child {
+    margin-bottom: 0;
+}
+
+.page .guideline-item .colors--sm {
+    width: 49%;
+}
+
+.page .guideline-item .color {
+    margin-bottom: 18px;
+}
+
+.page .guideline-item .colors--sm .color {
+    margin-bottom: 9px;
+}
+
+.page .guideline-item .color:last-child {
+    margin-bottom: 0;
 }
 
 .page .dos {
