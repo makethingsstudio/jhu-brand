@@ -19,7 +19,9 @@
         ?>
         <style type="text/css">
         .menu-toggle,
-        .left-off-canvas-menu {
+        .menu-toggle:before,
+        .left-off-canvas-menu,
+        .entry-header[data-magellan-expedition="fixed"] {
             background-color: <?php echo $color ?>;
         }
         </style>
