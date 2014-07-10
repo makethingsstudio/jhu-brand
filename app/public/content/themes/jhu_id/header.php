@@ -12,6 +12,17 @@
 <html class="no-js" <?php language_attributes(); ?>>
     <head>
         <?php get_template_part('template-part', 'meta' ); ?>
+        <?php
+            if (get_field('section_color')):
+                $color = get_field('section_color');
+            endif;
+        ?>
+        <style type="text/css">
+        .menu-toggle,
+        .left-off-canvas-menu {
+            background-color: <?php echo $color ?>;
+        }
+        </style>
     </head>
 
     <body <?php body_class('site'); ?>>

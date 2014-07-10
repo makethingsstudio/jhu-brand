@@ -1,6 +1,14 @@
 /*===========================================================
     ^Overrides
 ===========================================================*/
+ul.off-canvas-list li a {
+    border-color: rgba(38, 38, 38, .5);
+}
+
+.move-right .exit-off-canvas {
+    box-shadow: -4px 0 4px rgba(38, 38, 38, .25), 4px 0 4px rgba(38, 38, 38, .25);
+}
+
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
     padding-left: 15px;
     margin-bottom: 0;
@@ -130,7 +138,7 @@ body {
 .menu-toggle:hover,
 .menu-toggle:focus {
     color: #fff;
-    background-color: #002d72;
+    background-color: #68ACE5;
 }
 
 .entry-heading {
