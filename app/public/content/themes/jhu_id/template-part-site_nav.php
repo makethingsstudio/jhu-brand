@@ -43,3 +43,5 @@
 
     }
 ?>
+    <li class="site_nav-item"><a href="/" class="site_nav-link">Guideline Homepage</a></li>
+    <li class="site_nav-item"><a href="//jhu.edu" class="site_nav-link">Johns Hopkins Homepage</a></li>
