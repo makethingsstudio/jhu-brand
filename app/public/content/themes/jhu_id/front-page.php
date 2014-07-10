@@ -77,7 +77,7 @@
                             <?php
                                 elseif(get_row_layout() === 'image'):
                                     $image = get_sub_field('image');
-                                    if(!empty(image)):
+                                    if(!empty($image)):
                                         $url = $image['url'];
                                         $title = $image['title'];
                                         $alt = $image['alt'];
@@ -131,7 +131,7 @@
                                 <?php
                                     elseif(get_row_layout() === 'image'):
                                         $image = get_sub_field('image');
-                                        if(!empty(image)):
+                                        if(!empty($image)):
                                             $url = $image['url'];
                                             $title = $image['title'];
                                             $alt = $image['alt'];

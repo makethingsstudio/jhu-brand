@@ -35,10 +35,13 @@
                     $links  = $logos.find('a');
                 console.log($images);
 
-                $logos.on('click', 'a', function (e) {
-                    console.log(this);
-                    e.preventDefault();
+                $logos.on('mouseover', 'a', function (e) {
                     var data = $(this).data();
+
+                    e.preventDefault();
+                    console.log(data);
+                    $images.removeClass('active');
+                    $logos.find('img.' + data.preview).addClass('active');
                 });
             }
         });
