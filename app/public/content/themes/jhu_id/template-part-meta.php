@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title><?php wp_title( ); ?></title>
+<title><?php wp_title(''); ?></title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,4 +21,9 @@
 <!-- build:js /content/themes/jhu_id/scripts/vendor/modernizr.js -->
 <script src="/content/themes/jhu_id/bower_components/modernizr/modernizr.js"></script>
 <!-- endbuild -->
+
+<link rel="shortcut icon"
+ href="//jhu.edu/favicon.ico" />
 <?php wp_head(); ?>
+
+

@@ -875,8 +875,8 @@ body {
     position: relative;
     margin-bottom: 24px;
     background: #f8f7f6;
-    -webkit-transform: background .3s linear;
-            transform: background .3s linear;
+    -webkit-transition: background .3s linear;
+            transition: background .3s linear;
 }
 
 .page .menu-toggle {
@@ -1102,5 +1102,232 @@ body {
 .page .ts_fonts,
 .page .ts_themes,
 .page .ts_font_info {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .billboard-is-fullheight .off-canvas-wrap,
+    .billboard-is-fullheight .inner-wrap {
+        height: inherit;
+    }
+
+    .billboard-is-fullheight .billboard--fullheight {
+        position: relative;
+        height: auto;
+        max-height: auto;
+    }
+
+    .billboard--fullheight .billboard-background {
+        display: none;
+    }
+
+    .stuck {
+        position: static !important;
+    }
+
+    .home .site-masthead {
+        position: relative;
+    }
+
+    .home .masthead-brand,
+    .home .masthead-nav,
+    .home .home-nav {
+        position: static;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+
+    .home .masthead-brand .brand-logo,
+    .home .masthead-brand .brand-tagline {
+        width: 100%;
+    }
+
+    .home .masthead-brand .brand-logo {
+        padding-top: 25px;
+    }
+
+    .home .masthead-brand .brand-mark {
+        width: 100%;
+        height: 1px;
+        padding-top: 47.0744681%;
+        background-position: bottom;
+        background-size: cover;
+    }
+
+    .home .nav-column {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .home .nav-column {
+        background-color: #2C2C33;
+    }
+
+    .home .home-nav {
+        position: relative;
+        top: 0;
+        z-index: 2;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .home .site-nav,
+    .home .utility-nav {
+        margin-left: 0
+    }
+
+    .home .site-nav li,
+    .home .utility-nav li {
+        display: block;
+    }
+
+    .interior .menu-toggle {
+        position: static;
+    }
+
+    .interior .entry-header {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+
+/*===========================================================
+    ^ IE 8
+===========================================================*/
+
+.browsehappy {
+    padding: 10px 0;
+    text-align: center;
+    color: #000;
+    background: #FFCD00;
+}
+
+.lt-ie9 .columns {
+    float: none;
+    display: block;
+    width: 100%;
+}
+
+.lt-ie9 .billboard-is-fullheight .off-canvas-wrap,
+.lt-ie9 .billboard-is-fullheight .inner-wrap {
+    height: inherit;
+}
+
+.lt-ie9 .billboard-is-fullheight .billboard--fullheight {
+    position: relative;
+    height: auto;
+    max-height: auto;
+}
+
+.lt-ie9 .billboard--fullheight .billboard-background {
+    display: none;
+}
+
+.lt-ie9 .stuck {
+    position: static !important;
+}
+
+.lt-ie9 .home .site-masthead {
+    position: relative;
+}
+
+.lt-ie9 .home .masthead-brand,
+.lt-ie9 .home .masthead-nav,
+.lt-ie9 .home .home-nav {
+    position: static;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+
+.lt-ie9 .home .masthead-brand .brand-logo,
+.lt-ie9 .home .masthead-brand .brand-tagline {
+    width: 100%;
+}
+
+.lt-ie9 .home .masthead-brand .brand-logo {
+    padding-top: 25px;
+}
+
+.lt-ie9 .home .masthead-brand .brand-mark {
+    width: 100%;
+    height: 1px;
+    padding-top: 47.0744681%;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.lt-ie9 .home .nav-column {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.lt-ie9 .home .nav-column {
+    background-color: #2C2C33;
+}
+
+.lt-ie9 .home .home-nav {
+    position: relative;
+    top: 0;
+    z-index: 2;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.lt-ie9 .home .site-nav,
+.lt-ie9 .home .utility-nav {
+    margin-left: 0
+}
+
+.lt-ie9 .home .site-nav li,
+.lt-ie9 .home .utility-nav li {
+    display: block;
+}
+
+.lt-ie9 .interior .menu-toggle {
+    position: static;
+}
+
+.lt-ie9 .interior .entry-header {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+
+.lt-ie9 .site-masthead .row {
+    width: 978px;
+    margin: 0 auto;
+}
+
+.lt-ie9 .left-off-canvas-menu {
+    position: static;
+    float: left;
+    width: 20%;
+    margin-right: 30px;
+}
+
+.lt-ie9 .site-content {
+    overflow: hidden;
+}
+
+.lt-ie9 .uno {
+    width: 80%;
+    float: right;
+}
+
+.lt-ie9 .dos {
+    width: 20%;
+    float: left;
+}
+
+.lt-ie9 .menu-toggle {
+    display: none;
+}
+
+.brand-mark {
+    background-image: none;
+}
+
+.brand-mark:before {
     display: none;
 }
