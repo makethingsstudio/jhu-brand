@@ -1324,10 +1324,10 @@ body {
     display: none;
 }
 
-.brand-mark {
+.lt-ie9 .brand-mark {
     background-image: none;
 }
 
-.brand-mark:before {
+.lt-ie9 .brand-mark:before {
     display: none;
 }

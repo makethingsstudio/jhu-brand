@@ -11,7 +11,7 @@
                 <footer class="site-footer row" role="footer">
                     <div class="footer-brand columns medium-3 medium-offset-1">
                         <h1 class="brand-logo">
-                            <a class="brand-mark" href="#">Johns Hopkins University</a>
+                            <a class="brand-mark" href="//jhu.edu">Johns Hopkins University</a>
                         </h1>
                     </div>
                     <nav class="footer-nav columns medium-5">
