@@ -18,16 +18,22 @@
             endif;
         ?>
         <style type="text/css">
+        .page_nav a:hover,
+        .page_nav a.active {
+            color: <?php echo $color ?>;
+        }
+
         .menu-toggle,
         .menu-toggle:before,
         .left-off-canvas-menu,
+        .entry-header.stuck,
         .entry-header[data-magellan-expedition="fixed"] {
             background-color: <?php echo $color ?>;
         }
         </style>
     </head>
 
-    <body <?php body_class('site'); ?>>
+    <body <?php body_class('site interior'); ?>>
         <!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -37,7 +43,7 @@
                     <div class="row">
                         <div class="masthead-brand columns medium-3">
                             <h1 class="brand-logo">
-                                <a class="brand-mark" href="/">Johns Hopkins University</a>
+                                <a class="brand-mark" href="//jhu.edu" target="_blank">Johns Hopkins University</a>
                             </h1>
                         </div>
                         <nav class="site-utility columns medium-5" role="navigation">
@@ -56,6 +62,7 @@
 
                 <aside class="left-off-canvas-menu site-nav" role="navigation">
                   <ul class="off-canvas-list site_nav nav nav--stack">
+                    <li><a href="/" title="Brand Guidelines Homepage">Guideline Homepage</a></li>
                     <?php get_template_part('template-part', 'site_nav'); ?>
                   </ul>
                 </aside>

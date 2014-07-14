@@ -52,7 +52,10 @@
         <script src="/content/themes/jhu_id/bower_components/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
         <script src="/content/themes/jhu_id/bower_components/fancybox/source/jquery.fancybox.js"></script>
         <script src="/content/themes/jhu_id/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
-
+        <script src="/content/themes/jhu_id/bower_components/jquery-waypoints/waypoints.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/jquery.scrollTo/jquery.scrollTo.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/jquery.localScroll/jquery.localScroll.js"></script>
         <!-- endbower -->
         <script src="/ts/js/jquery.typeshow.js"></script>
         <script src="/content/themes/jhu_id/scripts/main.js"></script>
