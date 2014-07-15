@@ -9,7 +9,7 @@ set :stages, %w(dev staging production)
 # Deploy Details
 set :deploy_via, :remote_cache
 set :copy_cache, true
-set :copy_exclude, ['.git']
+# set :copy_exclude, ['.git']
 
 # SSH
 set :ssh_options, {:forward_agent => true}
@@ -23,7 +23,7 @@ set :use_sudo, false
 namespace :app  do
   desc 'load submodules from repo'
   task :submodules do
-    run "git submodules update --init --recursive -q"
+    run "cd #{current_path}; git submodule update --init --recursive -q"
   end
   desc 'symlink folders'
   task :symlink do

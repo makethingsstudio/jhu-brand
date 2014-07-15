@@ -47,6 +47,7 @@
         <!-- build:js /content/themes/jhu_id/scripts/main.js -->
         <!-- bower:js -->
         <script src="/content/themes/jhu_id/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/jquery-migrate/jquery-migrate.js"></script>
         <script src="/content/themes/jhu_id/bower_components/foundation/js/vendor/fastclick.js"></script>
         <script src="/content/themes/jhu_id/bower_components/foundation/js/foundation.min.js"></script>
         <script src="/content/themes/jhu_id/bower_components/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
