@@ -21,6 +21,10 @@ set :use_sudo, false
 
 
 namespace :app  do
+  desc 'load submodules from repo'
+  task :submodules do
+    run "git submodules update --init --recursive -q"
+  end
   desc 'symlink folders'
   task :symlink do
     run "ln -sF #{shared_path}/uploads #{current_path}/public/content/"
