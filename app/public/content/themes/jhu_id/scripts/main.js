@@ -7,7 +7,8 @@
             $.scrollTo(0);
         });
         $('.interior .page-nav').waypoint('sticky', {
-            offset: 122
+            offset: 122,
+            wrapper: '<div class="sticky-wrapper" /><div class="row" /><div class="medium-2" />'
         }).localScroll({
             hash: true
         });

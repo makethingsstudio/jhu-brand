@@ -126,11 +126,11 @@ body {
 ===========================================================*/
 .menu-toggle {
     display: inline-block;
-    padding: 30px 20px;
+    padding: 0 20px;
     font-family: 'titling-gothic', sans-serif;
     font-weight: 500;
     font-size: 12px;
-    line-height: 1;
+    line-height: 72px;
     letter-spacing: .1em;
     text-transform: uppercase;
     color: #fff;
@@ -142,8 +142,8 @@ body {
     display: block;
     position: absolute;
     top: 0;
-    left: -500%;
-    width: 500%;
+    left: -99999px;
+    width: 99999px;
     min-height: 6em;
     background-color: #7b7ca6;
 }
@@ -155,10 +155,12 @@ body {
 }
 
 .entry-heading {
+    padding: 0;
+    margin: 0;
     font-family: 'quadon', serif;
     font-weight: 500;
     font-size: 36px;
-    line-height: 2;
+    line-height: 72px;
 }
 
 .nav {
@@ -223,9 +225,12 @@ body {
 
 /*  ^Sticky
 ===========================================================*/
-.stuck {
-    position: fixed !important;
-    top: 0;
+
+
+@media only screen and (min-width:40.063em) {
+    .stuck {
+        position: fixed !important;
+    }
 }
 
 
@@ -938,15 +943,25 @@ body {
 
 .interior .entry-header.stuck {
     width: 100%;
-    box-shadow: 0 1px 3px #D2CAC6;
 }
 
 .interior .entry-header.stuck .entry-heading {
     margin-bottom: 0;
 }
 
-.interior .page-nav.stuck {
-    top: 122px;
+@media only screen and (min-width:40.063em) {
+
+    .interior .entry-header.stuck {
+        top: 0;
+    }
+
+    .interior .page-nav.stuck {
+        top: 122px;
+        left: 50%;
+        width: 167px;
+        margin-left: -25.1875em;
+    }
+
 }
 
 .interior .page-nav li {
@@ -1104,6 +1119,12 @@ body {
 .page .ts_font_info {
     display: none;
 }
+
+
+/*===========================================================
+  ^Basic Mobile Queries
+===========================================================*/
+
 
 
 @media screen and (max-width: 768px) {
