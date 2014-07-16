@@ -2,6 +2,33 @@
     $(function () {
         $(document).foundation();
 
+        // Interior sticky header
+        $('.interior .entry-header').waypoint('sticky').on('click', '.menu-toggle', function (){
+            $.scrollTo(0);
+        });
+        $('.interior .page-nav').waypoint('sticky', {
+            offset: 122,
+            wrapper: '<div class="sticky-wrapper" /><div class="row" /><div class="medium-2" />'
+        }).localScroll({
+            hash: true
+        });
+
+        // $('.interior .guideline-item').waypoint({
+        //     handler: function (direction) {
+        //         var id = this.id,
+        //             hash = '#' + id,
+        //             $nav = $('.page-nav');
+
+        //         $nav
+        //             .find('a')
+        //                 .removeClass('active')
+        //                 .end()
+        //             .find('[href="' + hash + '"]').addClass('active');
+
+        //     }
+        // },{
+        //     offset: 122
+        // });
 
         // Display example images in lightbox
         $('.example-lightbox').fancybox({
@@ -64,5 +91,21 @@
             "fonts"  : [{"name":"Gentona","designer":"Rene Bieder","foundry":"Rene Bieder","url":"http://www.renebieder.com","hasLigatures":"N","styles":[{"fontfile":"Gentona-Bold.ttf","name":"Bold"},{"fontfile":"Gentona-Book.ttf","name":"Book"}]}],
             "panagrams" : [{"text": "JHU"}]
         });
+
+        // Quadon Typetester
+        $('#type-arnhem').typeshow({
+            "folder" : "/ts",
+            "fonts"  : [{"name":"Arnhem","designer":"Fred Smeijers","foundry":"OurType","url":"","hasLigatures":"N","styles":[{"fontfile":"Arnhem-Blond.ttf","name":"Regular"}]}],
+            "panagrams" : [{"text": "JHU"}]
+        });
+
+        // Gentona Typetester
+        $("#type-titling").typeshow({
+            "folder" : "/ts",
+            "fonts"  : [{"name":"Titling Gothic","designer":"David Berlow","foundry":"The Font Bureau","url":"","hasLigatures":"N","styles":[{"fontfile":"Titling-Gothic-Regular.ttf","name":"Regular"}]}],
+            "panagrams" : [{"text": "JHU"}]
+        });
+
+
     });
 })(jQuery);

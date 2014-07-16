@@ -9,15 +9,17 @@
 ?>
 
 <?php get_header('homepage'); ?>
-    <?php
-        if ( have_posts() ) : the_post();
-            if (has_post_thumbnail()) {
-                $post_thumbnail_id = get_post_thumbnail_id();
-                $post_thumbnail_url = wp_get_attachment_image_src($post_thumbnail_id, 'full');
-                $billobardUrl = $post_thumbnail_url[0];
 
-            }
-        ?>
+<?php
+if ( have_posts() ) :
+    the_post();
+    if (has_post_thumbnail()):
+        $post_thumbnail_id = get_post_thumbnail_id();
+        $post_thumbnail_url = wp_get_attachment_image_src($post_thumbnail_id, 'full');
+        $billobardUrl = $post_thumbnail_url[0];
+
+    endif;
+    ?>
     <div class="billboard billboard--fullheight region">
         <header class="site-masthead row" role="banner">
             <div class="columns medium-6 brand-column">
@@ -31,21 +33,40 @@
                 </div><!-- /.masthead-brand -->
             </div>
             <div class="columns medium-6 nav-column">
-                <nav class="site-nav" role="navigation">
-                    <h2 class="site_nav-heading">Brand Guidelines</h2>
+                <div class="home-nav">
+                    <nav class="site-nav" role="navigation">
+                        <h2 class="site_nav-heading nav-heading">Brand Guidelines</h2>
 
-                    <ul class="nav site_nav">
-                        <?php get_template_part('template-part', 'site_nav'); ?>
-                    </ul>
-                </nav><!-- /.site-nav -->
+                        <ul class="nav site_nav">
+                            <?php get_template_part('template-part', 'site_nav'); ?></ul>
+                    </nav>
+                    <!-- /.site-nav -->
+
+                    <nav class="utility-nav">
+                        <h2 class="utility-nav-heading nav-heading"></h2>
+                        <!-- /.utility-nav-heading nav-heading -->
+                        <?php
+                                        $utility_args = array(
+                                            'theme_location'  =>
+                        'utility-menu',
+                                            'menu_class'      => 'nav utility_nav',
+                                            'menu_id'         => '',
+                                            'items_wrap' => '
+                        <ul id="%1$s" class="%2$s">%3$s</ul>
+                        ',
+                                        );
+                                        wp_nav_menu($utility_args);
+                                    ?>
+                    </nav>
+                    <!-- /.utility-nav --> </div>
             </div>
         </header><!-- /.site-masthead -->
         <div class="billboard-background" style="background-image: url(<?php echo $billobardUrl; ?>);"></div>
     </div><!-- /.billboard billboard-fullheight -->
-        <?php
-        endif;
-    ?>
-    <main class="site-content region">
+<?php
+    endif; ?>
+
+    <main class="site-content region clearfix">
     <?php
         $counter = 0;
         if (have_rows('home_regions')):
@@ -56,7 +77,7 @@
 <?php
                 if ($counter % 2 == 0):
 ?>
-                    <div class="locale row media home_media" id="">
+                    <div class="locale row media home_media home_media--alt" id="">
                         <header class="media-header medium-offset-1">
                             <h2 class="media-heading">
                                 <?php the_sub_field('heading'); ?>
@@ -162,13 +183,12 @@
                             </div><!-- /.media-text -->
                         </div><!-- /.locale media home_media -->
 <?php
-                endif;
+     endif;
 ?>
 
-    <?php
-            endwhile;
-        endif;
-    ?>
+<?php
+        endwhile;
+    endif; ?>
     </main><!-- /.site-content -->
 
 <?php get_footer(); ?>

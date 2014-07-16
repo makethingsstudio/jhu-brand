@@ -178,6 +178,7 @@
                 <aside class="dos columns medium-pull-9 medium-2">
                     <nav class="page-nav">
                         <ul class="nav nav--stack page_nav">
+
                             <?php echo $pageNav; ?>
                         </ul><!-- /.nav nav--stack page_nav -->
                     </nav><!-- /.page-nav -->

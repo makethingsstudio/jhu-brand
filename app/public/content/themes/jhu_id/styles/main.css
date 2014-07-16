@@ -21,7 +21,11 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
 }
 
 .button, button {
-    background-color: #002d72;
+    font-weight: bold;
+    color: #fff;
+    outline: none;
+    border: none;
+    background-color: #005eb8;
 }
 
 .entry-header[data-magellan-expedition],
@@ -120,17 +124,27 @@ body {
     color: #2c2c33;
 }
 
+audio,
+embed,
+iframe,
+img,
+object,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /*===========================================================
     ^Molecules
 ===========================================================*/
 .menu-toggle {
     display: inline-block;
-    padding: 30px 20px;
+    padding: 0 20px;
     font-family: 'titling-gothic', sans-serif;
     font-weight: 500;
     font-size: 12px;
-    line-height: 1;
+    line-height: 72px;
     letter-spacing: .1em;
     text-transform: uppercase;
     color: #fff;
@@ -142,8 +156,8 @@ body {
     display: block;
     position: absolute;
     top: 0;
-    left: -500%;
-    width: 500%;
+    left: -99999px;
+    width: 99999px;
     min-height: 6em;
     background-color: #7b7ca6;
 }
@@ -155,10 +169,12 @@ body {
 }
 
 .entry-heading {
+    padding: 0;
+    margin: 0;
     font-family: 'quadon', serif;
     font-weight: 500;
     font-size: 36px;
-    line-height: 2;
+    line-height: 72px;
 }
 
 .nav {
@@ -189,6 +205,8 @@ body {
 
 /*  ^Billboard
 ===========================================================*/
+.billboard-is-fullheight,
+.billboard-is-fullheight body,
 .billboard-is-fullheight .off-canvas-wrap,
 .billboard-is-fullheight .inner-wrap {
     height: 100%;
@@ -196,6 +214,7 @@ body {
 }
 
 .billboard-is-fullheight .billboard--fullheight {
+    position: relative;
     height: 90%;
     max-height: 900px;
 }
@@ -216,7 +235,18 @@ body {
     z-index: 2;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, .50);
+}
+
+
+/*  ^Sticky
+===========================================================*/
+
+
+@media only screen and (min-width:40.063em) {
+    .stuck {
+        position: fixed !important;
+    }
 }
 
 
@@ -312,7 +342,8 @@ body {
     color: #7e7e7c;
 }
 
-.page_nav a:hover {
+.page_nav a:hover,
+.page_nav a.active {
     color: #7b7ca6;
 }
 
@@ -629,6 +660,158 @@ body {
     background-color: #CBA052
 }
 
+.color-721C:before {
+    background-color: #DDA46F
+}
+
+.color-479C:before {
+    background-color: #AA8066
+}
+
+.color-7586:before {
+    background-color: #9E5330
+}
+
+.color-Gray1:before {
+    background-color: #E5E2E0
+}
+
+.color-Gray2:before {
+    background-color: #B4B2AD
+}
+
+.color-Gray3:before {
+    background-color: #7E7E7C
+}
+
+.color-Gray4:before {
+    background-color: #4A484C
+}
+
+.color-Gray5:before {
+    background-color: #2C2C33
+}
+
+.color-548C:before {
+    background-color: #003D4C
+}
+
+.color-7696C:before {
+    background-color: #6399AE
+}
+
+.color-284C:before {
+    background-color: #68ACE5
+}
+
+.color-300C:before {
+    background-color: #005EB8
+}
+
+.color-279C:before {
+    background-color: #418FDE
+}
+
+.color-651C:before {
+    background-color: #A7BCD6
+}
+
+.color-7675C:before {
+    background-color: #7C7FAB
+}
+
+.color-273C:before {
+    background-color: #24135F
+}
+
+.color-2617C:before {
+    background-color: #470A68
+}
+
+.color-7656C:before {
+    background-color: #8E3A80
+}
+
+.color-5205C:before {
+    background-color: #86647A
+}
+
+.color-1915C:before {
+    background-color: #EF4A81
+}
+
+.color-505C:before {
+    background-color: #6F2C3F
+}
+
+.color-7623C:before {
+    background-color: #8A2A2B
+}
+
+.color-179C:before {
+    background-color: #E03C31
+}
+
+.color-486C:before {
+    background-color: #E8927C
+}
+
+.color-173C:before {
+    background-color: #CF4520
+}
+
+.color-1505C:before {
+    background-color: #FF6900
+}
+
+.color-732C:before {
+    background-color: #623412
+}
+
+.color-1375C:before {
+    background-color: #FF9E1B
+}
+
+.color-1215C:before {
+    background-color: #FBD872
+}
+
+.color-116C:before {
+    background-color: #FFCD00
+}
+
+.color-101C:before {
+    background-color: #F7EA48
+}
+
+.color-584C:before {
+    background-color: #D2D755
+}
+
+.color-574C:before {
+    background-color: #4e5932
+}
+
+.color-7489C:before {
+    background-color: #74AA50
+}
+
+.color-7743C:before {
+    background-color: #44693D
+}
+
+.color-341C:before {
+    background-color: #007A53
+}
+
+.color-564C:before {
+    background-color: #86C8BC
+}
+
+.color-3268C:before {
+    background-color: #00AB8E
+}
+
 
 /*===========================================================
     ^Masthead
@@ -645,8 +828,8 @@ body {
     width: 208px;
     height: 46px;
     overflow: hidden;
-    background: url(../images/jhu-logo-interior.png) center center no-repeat;
-    background-size: cover;
+    background: url(../images/jhu-logo-interior@2x.png) center center no-repeat;
+    background-size: 208px 46px;
 }
 
 .brand-mark:before {
@@ -712,6 +895,9 @@ body {
 .page .entry-header {
     position: relative;
     margin-bottom: 24px;
+    background: #f8f7f6;
+    -webkit-transition: background .3s linear;
+            transition: background .3s linear;
 }
 
 .page .menu-toggle {
@@ -766,6 +952,38 @@ body {
     padding-left: 0;
 }
 
+.interior .entry-header,
+.interior .page-nav {
+    z-index: 10;
+}
+
+.interior .entry-header.stuck {
+    width: 100%;
+}
+
+.interior .entry-header.stuck .entry-heading {
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width:40.063em) {
+
+    .interior .entry-header.stuck {
+        top: 0;
+    }
+
+    .interior .page-nav.stuck {
+        top: 122px;
+        left: 50%;
+        width: 167px;
+        margin-left: -25.1875em;
+    }
+
+}
+
+.interior .page-nav li {
+    width: 90%;
+}
+
 
 /*===========================================================
     ^Home
@@ -780,7 +998,7 @@ body {
 .home .brand-column {
     position: relative;
     height: 100%;
-    background-color: #002d72
+    background-color: #68ACE5
 }
 
 .home .nav-column {
@@ -795,20 +1013,20 @@ body {
     left: -500%;
     width: 500%;
     height: 100%;
-    background-color: #002d72
+    background-color: #68ACE5
 }
 
 .home .masthead-brand,
-.home .site-nav {
+.home .home-nav {
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-60%);
             transform: translateY(-60%);
 }
 
-.home .site-nav {
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+.home .home-nav {
+    -webkit-transform: translateY(-37%);
+            transform: translateY(-37%);
 }
 
 .home .masthead-brand {
@@ -821,7 +1039,8 @@ body {
     width: 376px;
     height: 177px;
     margin: 0 auto 60px;
-    background-image: url(../images/jhu-logo-home.png);
+    background-image: url(../images/jhu-logo-home@2x.png);
+    background-size: 376px 177px;
 }
 
 .home .masthead-brand .brand-tagline {
@@ -834,13 +1053,30 @@ body {
     font-weight: 700;
 }
 
-.home .site-nav {
+.home .site-nav,
+.home .utility-nav {
     width: 80%;
     margin: 0 0 0 20%;
 }
 
 .home .site_nav-heading {
     margin-bottom: 18px;
+}
+
+.home .site-nav {
+    margin-bottom: 36px;
+}
+
+.home .utility-nav {
+    text-align: center;
+}
+
+.home .utility-nav li {
+    margin: 0 15px 0 0;
+}
+
+.home .utility-nav a {
+    color: #7e7e7c;
 }
 
 .home .site-content {
@@ -899,4 +1135,363 @@ body {
 .page .ts_themes,
 .page .ts_font_info {
     display: none;
+}
+
+
+/*===========================================================
+  ^Basic Mobile Queries
+===========================================================*/
+
+
+
+@media screen and (max-width: 768px) {
+    .billboard-is-fullheight .off-canvas-wrap,
+    .billboard-is-fullheight .inner-wrap {
+        height: inherit;
+    }
+
+    .billboard-is-fullheight .billboard--fullheight {
+        position: relative;
+        height: auto;
+        max-height: auto;
+    }
+
+    .billboard--fullheight .billboard-background {
+        display: none;
+    }
+
+    .stuck {
+        position: static !important;
+    }
+
+    .home .site-masthead {
+        position: relative;
+    }
+
+    .home .masthead-brand,
+    .home .masthead-nav,
+    .home .home-nav {
+        position: static;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+
+    .home .masthead-brand .brand-logo,
+    .home .masthead-brand .brand-tagline {
+        width: 100%;
+    }
+
+    .home .masthead-brand .brand-logo {
+        padding-top: 25px;
+    }
+
+    .home .masthead-brand .brand-mark {
+        width: 100%;
+        height: 1px;
+        padding-top: 47.0744681%;
+        background-position: bottom;
+        background-size: cover;
+    }
+
+    .home .nav-column {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .home .nav-column {
+        background-color: #2C2C33;
+    }
+
+    .home .home-nav {
+        position: relative;
+        top: 0;
+        z-index: 2;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .home .site-nav,
+    .home .utility-nav {
+        margin-left: 0
+    }
+
+    .home .site-nav li,
+    .home .utility-nav li {
+        display: block;
+    }
+
+    .interior .menu-toggle {
+        position: static;
+    }
+
+    .interior .entry-header {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+
+/*===========================================================
+    ^ IE 8
+===========================================================*/
+
+.browsehappy {
+    padding: 10px 19%;
+    margin: 0;
+    text-align: center;
+    color: #000;
+    background: #FFCD00;
+}
+
+.lt-ie9,
+.lt-ie9 body,
+.lt-ie9 div,
+.lt-ie9 p,
+.lt-ie9 ul,
+.lt-ie9 ol,
+.lt-ie9 dl,
+.lt-ie9 h1,
+.lt-ie9 h2,
+.lt-ie9 h3,
+.lt-ie9 h4,
+.lt-ie9 h5,
+.lt-ie9 body {
+    font-family: Helvetica, Arial, sans-serif !important;
+}
+
+.lt-ie9 .row {
+    width: 978px;
+    max-width: 1215px;
+    margin-right: auto ;
+    margin-left: auto;
+}
+
+.lt-ie9 .row .row {
+    width: 100%;
+    max-width: auto;
+    margin-right: auto ;
+    margin-left: auto;
+}
+
+.lt-ie9.billboard-is-fullheight,
+.lt-ie9.billboard-is-fullheight body,
+.lt-ie9.billboard-is-fullheight .off-canvas-wrap,
+.lt-ie9.billboard-is-fullheight .inner-wrap,
+.lt-ie9 .billboard--fullheight {
+}
+
+.lt-ie8 .home .billboard-background {
+    background: #68ACE5 !important;
+    background-image: none;
+}
+
+.lt-ie9 .home .brand-column,
+.lt-ie9 .home .nav-column {
+    display: inline;
+    float: left;
+    width: 49%;
+}
+
+.lt-ie9 .home .nav-column {
+    float: right;
+}
+
+
+.lt-ie9 .home .masthead-brand {
+    top: 25%;
+}
+
+.lt-ie9 .home .home-nav {
+    top: 40%;
+}
+
+.lt-ie8 .home .site_nav li,
+.lt-ie8 .home .utility_nav li {
+    display: inline;
+    zoom: 1;
+}
+
+.lt-ie8 .home .site_nav li {
+    display: inline;
+    zoom: 1;
+}
+
+.lt-ie9 .home .masthead-brand .brand-mark {
+    width: 376px;
+    height: 177px;
+    margin: 0 auto 60px;
+    text-indent: -99999px;
+    background-image: url(../images/jhu-logo-home.png);
+}
+
+.lt-ie9 .home_media .media-header {
+    display: inline;
+    float: left;
+    width: 100%;
+}
+
+.lt-ie9 .home_media .media-attach {
+    display: inline;
+    float: right;
+    width: 41.666%;
+}
+
+.lt-ie9 .home_media--alt .media-attach {
+    float: left;
+}
+
+.lt-ie9 .home_media .media-text {
+    display: inline;
+    float: left;
+    width: 41.666%;
+}
+
+.lt-ie9 .home_media--alt .media-text {
+    float: right;
+}
+
+.lt-ie9 .interior .site-masthead {
+    overflow: hidden;
+}
+
+.lt-ie9 .interior .masthead-brand {
+    display: inline;
+    float: left;
+    width: 25%;
+}
+
+.lt-ie9 .interior .masthead-brand {
+    display: inline;
+    float: left;
+    width: 25%;
+}
+
+.lt-ie9 .interior .brand-mark,
+.lt-ie9 .site-footer .brand-mark {
+    text-indent: -99999px;
+    background-image: url(../images/jhu-logo-interior.png);
+}
+
+.lt-ie9 .interior .site-utility {
+    display: inline;
+    float: right;
+    width: 50%;
+}
+
+.lt-ie9 .interior .utility_nav {
+    display: block;
+    width: 100%;
+}
+
+.lt-ie8 .interior .utility_nav > li {
+    display: inline;
+    zoom: 1;
+}
+
+.lt-ie9 .interior .utility_nav > li > a {
+    font-size: 14px;
+}
+
+.lt-ie9 .interior .left-off-canvas-menu {
+    position: static;
+    background-color: #4A484C !important;
+}
+
+.lt-ie9 .interior .left-off-canvas-menu .site_nav {
+    overflow: hidden;
+    padding: 15px;
+}
+
+.lt-ie9 .interior .site_nav > li {
+    display: inline;
+    float: left;
+    width: 19%;
+    zoom: 1;
+}
+
+.lt-ie9 .interior .site_nav > li > a {
+    display: block;
+}
+
+.lt-ie9 .interior .site-content {
+    overflow: hidden;
+}
+
+.lt-ie9 .interior .row .row {
+    width: 100%;
+    max-width: 100%;
+}
+
+.lt-ie9 .interior .uno {
+    float: right;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+}
+
+.lt-ie9 .interior  .dos {
+    float: left;
+    width: 20%;
+    padding: 0;
+    margin: 0;
+}
+
+.lt-ie9 .interior  .menu-toggle {
+    display: none;
+}
+
+.lt-ie9 .interior .brand-mark:before {
+    display: none;
+}
+
+.lt-ie9 .interior .example-item {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.lt-ie9 .interior .color-list {
+    display: block;
+}
+
+.lt-ie9 .interior .color-list > * {
+    display: inline;
+}
+
+.lt-ie9 .site-footer {
+    overflow: hidden;
+}
+
+.lt-ie8 .home .site-footer {
+    padding-top: 0;
+    padding-bottom: 96px
+}
+
+.lt-ie9 .site-footer * {
+    position: relative;
+    zoom: 1;
+}
+
+.lt-ie9 .site-footer .footer-brand {
+    display: inline;
+    float: left;
+    width: 25%;
+}
+
+.lt-ie9 .site-footer .footer-nav {
+    display: inline;
+    float: left;
+    width: 55%;
+}
+
+.lt-ie8 .site-footer .footer-nav li {
+    display: inline;
+    zoom: 1;
+}
+
+.lt-ie9 .site-footer .footer-contact {
+    display: inline;
+    float: right;
+    width: 15%;
 }

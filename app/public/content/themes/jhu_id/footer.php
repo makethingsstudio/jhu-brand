@@ -11,11 +11,12 @@
                 <footer class="site-footer row" role="footer">
                     <div class="footer-brand columns medium-3 medium-offset-1">
                         <h1 class="brand-logo">
-                            <a class="brand-mark" href="#">Johns Hopkins University</a>
+                            <a class="brand-mark" href="//jhu.edu">Johns Hopkins University</a>
                         </h1>
                     </div>
                     <nav class="footer-nav columns medium-5">
                         <ul class="nav footer_nav">
+                            <li><a href="/" title="Brand Guidelines Homepage">Guideline Homepage</a></li>
                            <?php get_template_part('template-part', 'site_nav'); ?>
                        </ul>
                     </nav><!-- /.footer-nav -->
@@ -47,12 +48,16 @@
         <!-- build:js /content/themes/jhu_id/scripts/main.js -->
         <!-- bower:js -->
         <script src="/content/themes/jhu_id/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/jquery-migrate/jquery-migrate.js"></script>
         <script src="/content/themes/jhu_id/bower_components/foundation/js/vendor/fastclick.js"></script>
         <script src="/content/themes/jhu_id/bower_components/foundation/js/foundation.min.js"></script>
         <script src="/content/themes/jhu_id/bower_components/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
         <script src="/content/themes/jhu_id/bower_components/fancybox/source/jquery.fancybox.js"></script>
         <script src="/content/themes/jhu_id/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
-
+        <script src="/content/themes/jhu_id/bower_components/jquery-waypoints/waypoints.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/jquery.scrollTo/jquery.scrollTo.js"></script>
+        <script src="/content/themes/jhu_id/bower_components/jquery.localScroll/jquery.localScroll.js"></script>
         <!-- endbower -->
         <script src="/ts/js/jquery.typeshow.js"></script>
         <script src="/content/themes/jhu_id/scripts/main.js"></script>

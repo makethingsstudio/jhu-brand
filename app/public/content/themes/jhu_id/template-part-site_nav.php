@@ -13,7 +13,7 @@
         'sort_order' => 'ASC',
         'sort_column' => 'menu_order',
         'hierarchical' => 1,
-        'exclude' => '77',
+        'exclude' => '77, 98',
         'include' => '',
         'meta_key' => '',
         'meta_value' => '',
@@ -43,5 +43,3 @@
 
     }
 ?>
-    <li class="site_nav-item"><a href="/" class="site_nav-link">Guideline Homepage</a></li>
-    <li class="site_nav-item"><a href="//jhu.edu" class="site_nav-link">Johns Hopkins Homepage</a></li>

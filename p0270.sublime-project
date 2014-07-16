@@ -1,0 +1,29 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "./app/public/content/themes/jhu_id/",
+            "name": "theme"
+		},
+        {
+            "follow_symlinks": true,
+            "path": "./config/",
+            "name": "deploy config"
+        },
+        {
+            "name": "project config",
+            "path": ".",
+            "folder_exclude_patterns": [
+                "*"
+            ],
+            "file_exclude_patterns": [
+                ".edit*",
+                ".git*",
+                "Capfile",
+                "*.sublime-*",
+
+            ]
+        }
+	]
+}
