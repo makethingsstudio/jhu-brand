@@ -24,7 +24,6 @@
 <!--[if lt IE 9]>
 <script src="/content/themes/jhu_id/bower_components/html5shiv/dist/html5shiv.js"></script>
 <script src="/content/themes/jhu_id/bower_components/html5shiv/dist/html5shiv-printshiv.js"></script>
-<script src="/content/themes/jhu_id/bower_components/respondJs/respond.min.js"></script>
 <![endif]-->
 
 <!-- build:js /content/themes/jhu_id/scripts/vendor/modernizr.js -->

@@ -16,6 +16,7 @@
                     </div>
                     <nav class="footer-nav columns medium-5">
                         <ul class="nav footer_nav">
+                            <li><a href="/" title="Brand Guidelines Homepage">Guideline Homepage</a></li>
                            <?php get_template_part('template-part', 'site_nav'); ?>
                        </ul>
                     </nav><!-- /.footer-nav -->
