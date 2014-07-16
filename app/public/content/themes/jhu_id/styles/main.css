@@ -21,7 +21,11 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
 }
 
 .button, button {
-    background-color: #002d72;
+    font-weight: bold;
+    color: #fff;
+    outline: none;
+    border: none;
+    background-color: #005eb8;
 }
 
 .entry-header[data-magellan-expedition],
@@ -1379,7 +1383,7 @@ video {
     width: 100%;
 }
 
-.lt-ie9 .interior .utility_nav > li {
+.lt-ie8 .interior .utility_nav > li {
     display: inline;
     zoom: 1;
 }
@@ -1459,7 +1463,7 @@ video {
     overflow: hidden;
 }
 
-.lt-ie8 .site-footer {
+.lt-ie8 .home .site-footer {
     padding-top: 0;
     padding-bottom: 96px
 }
