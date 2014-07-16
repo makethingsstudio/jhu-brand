@@ -21,7 +21,11 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
 }
 
 .button, button {
-    background-color: #002d72;
+    font-weight: bold;
+    color: #fff;
+    outline: none;
+    border: none;
+    background-color: #005eb8;
 }
 
 .entry-header[data-magellan-expedition],
@@ -120,6 +124,16 @@ body {
     color: #2c2c33;
 }
 
+audio,
+embed,
+iframe,
+img,
+object,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /*===========================================================
     ^Molecules
@@ -191,6 +205,8 @@ body {
 
 /*  ^Billboard
 ===========================================================*/
+.billboard-is-fullheight,
+.billboard-is-fullheight body,
 .billboard-is-fullheight .off-canvas-wrap,
 .billboard-is-fullheight .inner-wrap {
     height: 100%;
@@ -812,8 +828,8 @@ body {
     width: 208px;
     height: 46px;
     overflow: hidden;
-    background: url(../images/jhu-logo-interior.png) center center no-repeat;
-    background-size: cover;
+    background: url(../images/jhu-logo-interior@2x.png) center center no-repeat;
+    background-size: 208px 46px;
 }
 
 .brand-mark:before {
@@ -1023,7 +1039,8 @@ body {
     width: 376px;
     height: 177px;
     margin: 0 auto 60px;
-    background-image: url(../images/jhu-logo-home.png);
+    background-image: url(../images/jhu-logo-home@2x.png);
+    background-size: 376px 177px;
 }
 
 .home .masthead-brand .brand-tagline {
@@ -1219,136 +1236,262 @@ body {
 ===========================================================*/
 
 .browsehappy {
-    padding: 10px 0;
+    padding: 10px 19%;
+    margin: 0;
     text-align: center;
     color: #000;
     background: #FFCD00;
 }
 
-.lt-ie9 .columns {
-    float: none;
-    display: block;
-    width: 100%;
+.lt-ie9,
+.lt-ie9 body,
+.lt-ie9 div,
+.lt-ie9 p,
+.lt-ie9 ul,
+.lt-ie9 ol,
+.lt-ie9 dl,
+.lt-ie9 h1,
+.lt-ie9 h2,
+.lt-ie9 h3,
+.lt-ie9 h4,
+.lt-ie9 h5,
+.lt-ie9 body {
+    font-family: Helvetica, Arial, sans-serif !important;
 }
 
-.lt-ie9 .billboard-is-fullheight .off-canvas-wrap,
-.lt-ie9 .billboard-is-fullheight .inner-wrap {
-    height: inherit;
-}
-
-.lt-ie9 .billboard-is-fullheight .billboard--fullheight {
-    position: relative;
-    height: auto;
-    max-height: auto;
-}
-
-.lt-ie9 .billboard--fullheight .billboard-background {
-    display: none;
-}
-
-.lt-ie9 .stuck {
-    position: static !important;
-}
-
-.lt-ie9 .home .site-masthead {
-    position: relative;
-}
-
-.lt-ie9 .home .masthead-brand,
-.lt-ie9 .home .masthead-nav,
-.lt-ie9 .home .home-nav {
-    position: static;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-}
-
-.lt-ie9 .home .masthead-brand .brand-logo,
-.lt-ie9 .home .masthead-brand .brand-tagline {
-    width: 100%;
-}
-
-.lt-ie9 .home .masthead-brand .brand-logo {
-    padding-top: 25px;
-}
-
-.lt-ie9 .home .masthead-brand .brand-mark {
-    width: 100%;
-    height: 1px;
-    padding-top: 47.0744681%;
-    background-position: bottom;
-    background-size: cover;
-}
-
-.lt-ie9 .home .nav-column {
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.lt-ie9 .home .nav-column {
-    background-color: #2C2C33;
-}
-
-.lt-ie9 .home .home-nav {
-    position: relative;
-    top: 0;
-    z-index: 2;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
-
-.lt-ie9 .home .site-nav,
-.lt-ie9 .home .utility-nav {
-    margin-left: 0
-}
-
-.lt-ie9 .home .site-nav li,
-.lt-ie9 .home .utility-nav li {
-    display: block;
-}
-
-.lt-ie9 .interior .menu-toggle {
-    position: static;
-}
-
-.lt-ie9 .interior .entry-header {
-    padding-right: 0.9375rem;
-    padding-left: 0.9375rem;
-}
-
-.lt-ie9 .site-masthead .row {
+.lt-ie9 .row {
     width: 978px;
-    margin: 0 auto;
+    max-width: 1215px;
+    margin-right: auto ;
+    margin-left: auto;
 }
 
-.lt-ie9 .left-off-canvas-menu {
-    position: static;
-    float: left;
-    width: 20%;
-    margin-right: 30px;
+.lt-ie9 .row .row {
+    width: 100%;
+    max-width: auto;
+    margin-right: auto ;
+    margin-left: auto;
 }
 
-.lt-ie9 .site-content {
-    overflow: hidden;
+.lt-ie9.billboard-is-fullheight,
+.lt-ie9.billboard-is-fullheight body,
+.lt-ie9.billboard-is-fullheight .off-canvas-wrap,
+.lt-ie9.billboard-is-fullheight .inner-wrap,
+.lt-ie9 .billboard--fullheight {
 }
 
-.lt-ie9 .uno {
-    width: 80%;
-    float: right;
-}
-
-.lt-ie9 .dos {
-    width: 20%;
-    float: left;
-}
-
-.lt-ie9 .menu-toggle {
-    display: none;
-}
-
-.lt-ie9 .brand-mark {
+.lt-ie8 .home .billboard-background {
+    background: #68ACE5 !important;
     background-image: none;
 }
 
-.lt-ie9 .brand-mark:before {
+.lt-ie9 .home .brand-column,
+.lt-ie9 .home .nav-column {
+    display: inline;
+    float: left;
+    width: 49%;
+}
+
+.lt-ie9 .home .nav-column {
+    float: right;
+}
+
+
+.lt-ie9 .home .masthead-brand {
+    top: 25%;
+}
+
+.lt-ie9 .home .home-nav {
+    top: 40%;
+}
+
+.lt-ie8 .home .site_nav li,
+.lt-ie8 .home .utility_nav li {
+    display: inline;
+    zoom: 1;
+}
+
+.lt-ie8 .home .site_nav li {
+    display: inline;
+    zoom: 1;
+}
+
+.lt-ie9 .home .masthead-brand .brand-mark {
+    width: 376px;
+    height: 177px;
+    margin: 0 auto 60px;
+    text-indent: -99999px;
+    background-image: url(../images/jhu-logo-home.png);
+}
+
+.lt-ie9 .home_media .media-header {
+    display: inline;
+    float: left;
+    width: 100%;
+}
+
+.lt-ie9 .home_media .media-attach {
+    display: inline;
+    float: right;
+    width: 41.666%;
+}
+
+.lt-ie9 .home_media--alt .media-attach {
+    float: left;
+}
+
+.lt-ie9 .home_media .media-text {
+    display: inline;
+    float: left;
+    width: 41.666%;
+}
+
+.lt-ie9 .home_media--alt .media-text {
+    float: right;
+}
+
+.lt-ie9 .interior .site-masthead {
+    overflow: hidden;
+}
+
+.lt-ie9 .interior .masthead-brand {
+    display: inline;
+    float: left;
+    width: 25%;
+}
+
+.lt-ie9 .interior .masthead-brand {
+    display: inline;
+    float: left;
+    width: 25%;
+}
+
+.lt-ie9 .interior .brand-mark,
+.lt-ie9 .site-footer .brand-mark {
+    text-indent: -99999px;
+    background-image: url(../images/jhu-logo-interior.png);
+}
+
+.lt-ie9 .interior .site-utility {
+    display: inline;
+    float: right;
+    width: 50%;
+}
+
+.lt-ie9 .interior .utility_nav {
+    display: block;
+    width: 100%;
+}
+
+.lt-ie8 .interior .utility_nav > li {
+    display: inline;
+    zoom: 1;
+}
+
+.lt-ie9 .interior .utility_nav > li > a {
+    font-size: 14px;
+}
+
+.lt-ie9 .interior .left-off-canvas-menu {
+    position: static;
+    background-color: #4A484C !important;
+}
+
+.lt-ie9 .interior .left-off-canvas-menu .site_nav {
+    overflow: hidden;
+    padding: 15px;
+}
+
+.lt-ie9 .interior .site_nav > li {
+    display: inline;
+    float: left;
+    width: 19%;
+    zoom: 1;
+}
+
+.lt-ie9 .interior .site_nav > li > a {
+    display: block;
+}
+
+.lt-ie9 .interior .site-content {
+    overflow: hidden;
+}
+
+.lt-ie9 .interior .row .row {
+    width: 100%;
+    max-width: 100%;
+}
+
+.lt-ie9 .interior .uno {
+    float: right;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+}
+
+.lt-ie9 .interior  .dos {
+    float: left;
+    width: 20%;
+    padding: 0;
+    margin: 0;
+}
+
+.lt-ie9 .interior  .menu-toggle {
     display: none;
+}
+
+.lt-ie9 .interior .brand-mark:before {
+    display: none;
+}
+
+.lt-ie9 .interior .example-item {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.lt-ie9 .interior .color-list {
+    display: block;
+}
+
+.lt-ie9 .interior .color-list > * {
+    display: inline;
+}
+
+.lt-ie9 .site-footer {
+    overflow: hidden;
+}
+
+.lt-ie8 .home .site-footer {
+    padding-top: 0;
+    padding-bottom: 96px
+}
+
+.lt-ie9 .site-footer * {
+    position: relative;
+    zoom: 1;
+}
+
+.lt-ie9 .site-footer .footer-brand {
+    display: inline;
+    float: left;
+    width: 25%;
+}
+
+.lt-ie9 .site-footer .footer-nav {
+    display: inline;
+    float: left;
+    width: 55%;
+}
+
+.lt-ie8 .site-footer .footer-nav li {
+    display: inline;
+    zoom: 1;
+}
+
+.lt-ie9 .site-footer .footer-contact {
+    display: inline;
+    float: right;
+    width: 15%;
 }
