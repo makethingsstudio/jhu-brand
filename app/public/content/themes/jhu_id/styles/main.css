@@ -1160,10 +1160,6 @@ video {
         max-height: inherit;
     }
 
-    .billboard--fullheight .billboard-background {
-        display: none;
-    }
-
     .stuck {
         position: static !important;
     }
@@ -1200,10 +1196,6 @@ video {
     .home .nav-column {
         padding-right: 0;
         padding-left: 0;
-    }
-
-    .home .nav-column {
-        background-color: #2C2C33;
     }
 
     .home .home-nav {
