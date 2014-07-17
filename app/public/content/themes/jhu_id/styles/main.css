@@ -216,6 +216,7 @@ video {
 .billboard-is-fullheight .billboard--fullheight {
     position: relative;
     height: 90%;
+    min-height: 450px;
     max-height: 900px;
 }
 
@@ -1083,7 +1084,7 @@ html,
 }
 
 .home .utility-nav a {
-    color: #7e7e7c;
+    color: #e5e2e0;
 }
 
 .home .site-content {
