@@ -46,7 +46,7 @@
                     <div class="row">
                         <div class="masthead-brand columns medium-3">
                             <h1 class="brand-logo">
-                                <a class="brand-mark" href="//jhu.edu" target="_blank">Johns Hopkins University</a>
+                                <a class="brand-mark" href="//brand.jhu.edu">Johns Hopkins University</a>
                             </h1>
                         </div>
                         <nav class="site-utility columns medium-5" role="navigation">

@@ -60,13 +60,13 @@
                 var $logos  = $('#logos'),
                     $images = $logos.find('img'),
                     $links  = $logos.find('a');
-                console.log($images);
+                // console.log($images);
 
                 $logos.on('mouseover', 'a', function (e) {
                     var data = $(this).data();
 
                     e.preventDefault();
-                    console.log(data);
+                    // console.log(data);
                     $images.removeClass('active');
                     $logos.find('img.' + data.preview).addClass('active');
                 });

@@ -61,7 +61,7 @@ if ( have_posts() ) :
                     <!-- /.utility-nav --> </div>
             </div>
         </header><!-- /.site-masthead -->
-        <div class="billboard-background" style="background-image: url(<?php echo $billobardUrl; ?>);"></div>
+        <div class="billboard-background" style="background-image: url(<?php the_field('homepage_photo'); ?>);"></div>
     </div><!-- /.billboard billboard-fullheight -->
 <?php
     endif; ?>

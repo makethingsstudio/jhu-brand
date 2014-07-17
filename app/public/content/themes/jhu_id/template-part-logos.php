@@ -12,6 +12,7 @@
     <div class="logos-preview">
         <div class="logos-images">
             <img class="university active" src="http://web1.johnshopkins.edu/~assets/identity/images/download-preview/university.small.vertical.blue.500px.png" />
+            <img class="enterprise" src="http://web1.johnshopkins.edu/~assets/identity/images/download-preview/enterprise.small.vertical.blue.500px.png" />
             <img class="alumni" src="http://web1.johnshopkins.edu/~assets/identity/images/download-preview/alumni.small.vertical.blue.500px.png" />
             <img class="apl" src="http://web1.johnshopkins.edu/~assets/identity/images/download-preview/apl.small.vertical.blue.500px.png" />
             <img class="berman" src="http://web1.johnshopkins.edu/~assets/identity/images/download-preview/berman.small.vertical.blue.500px.png" />
@@ -38,66 +39,69 @@
     <div class="logos-links clearfix">
         <ul class="columns medium-6">
             <li>
-                <a data-preview="university" href="http://web.jhu.edu/secure/logos/test.txt.zip">University</a>
+                <a data-preview="university" href="http://web.jhu.edu/secure/logos/university.zip">University</a>
             </li>
             <li>
-                <a data-preview="alumni" href="http://web.jhu.edu/secure/logos/test.txt.zip">Alumni</a>
+                <a data-preview="enterprise" href="http://web.jhu.edu/secure/logos/enterprise-medicine.zip">Enterprise</a>
             </li>
             <li>
-                <a data-preview="apl" href="http://web.jhu.edu/secure/logos/test.txt.zip">Applied Physics Lab</a>
+                <a data-preview="alumni" href="http://web.jhu.edu/secure/logos/alumni.zip">Alumni</a>
             </li>
             <li>
-                <a data-preview="berman" href="http://web.jhu.edu/secure/logos/test.txt.zip">Berman Institute</a>
+                <a data-preview="apl" href="http://web.jhu.edu/secure/logos/apl.zip">Applied Physics Lab</a>
             </li>
             <li>
-                <a data-preview="bloomberg" href="http://web.jhu.edu/secure/logos/test.txt.zip">Bloomberg School of Public Health</a>
+                <a data-preview="berman" href="http://web.jhu.edu/secure/logos/berman.zip">Berman Institute</a>
             </li>
             <li>
-                <a data-preview="carey" href="http://web.jhu.edu/secure/logos/test.txt.zip">Carey Business School</a>
+                <a data-preview="bloomberg" href="http://web.jhu.edu/secure/logos/bloomberg.zip">Bloomberg School of Public Health</a>
             </li>
             <li>
-                <a data-preview="cty" href="http://web.jhu.edu/secure/logos/test.txt.zip">Center for Talented Youth</a>
+                <a data-preview="carey" href="http://web.jhu.edu/secure/logos/carey.zip">Carey Business School</a>
             </li>
             <li>
-                <a data-preview="education" href="http://web.jhu.edu/secure/logos/test.txt.zip">School of Education</a>
+                <a data-preview="cty" href="http://web.jhu.edu/secure/logos/cty.zip">Center for Talented Youth</a>
             </li>
             <li>
-                <a data-preview="krieger" href="http://web.jhu.edu/secure/logos/test.txt.zip">Krieger School of Arts &amp; Sciences</a>
+                <a data-preview="education" href="http://web.jhu.edu/secure/logos/education.zip">School of Education</a>
             </li>
             <li>
-                <a data-preview="medicine" href="http://web.jhu.edu/secure/logos/test.txt.zip">School of Medicine</a>
+                <a data-preview="krieger" href="http://web.jhu.edu/secure/logos/krieger.zip">Krieger School of Arts &amp; Sciences</a>
+            </li>
+            <li>
+                <a data-preview="medicine" href="http://web.jhu.edu/secure/logos/medicine.zip">School of Medicine</a>
             </li>
         </ul>
         <ul class="columns medium-6 end">
             <li>
-                <a data-preview="nursing" href="http://web.jhu.edu/secure/logos/test.txt.zip" onclick="window.open('http://web.jhu.edu/secure/logos/test.txt.zip', '_blank', 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes'); return false;" target="_blank">School of Nursing</a>
+                <a data-preview="nursing" href="http://web.jhu.edu/secure/logos/nursing.zip" >School of Nursing</a>
             </li>
             <li>
-                <a data-preview="peabody-conservatory" href="http://web.jhu.edu/secure/logos/test.txt.zip" onclick="window.open('http://web.jhu.edu/secure/logos/test.txt.zip', '_blank', 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes'); return false;" target="_blank">Peabody Conservatory</a>
+                <a data-preview="peabody-conservatory" href="http://web.jhu.edu/secure/logos/peabody.zip">Peabody Conservatory</a>
             </li>
             <li>
-                <a data-preview="peabody-institute" href="http://web.jhu.edu/secure/logos/test.txt.zip" onclick="window.open('http://web.jhu.edu/secure/logos/test.txt.zip', '_blank', 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes'); return false;" target="_blank">Peabody Institute</a>
+                <a data-preview="peabody-institute" href="http://web.jhu.edu/secure/logos/peabody.zip">Peabody Institute</a>
             </li>
             <li>
-                <a data-preview="peabody-preparatory" href="http://web.jhu.edu/secure/logos/test.txt.zip" onclick="window.open('http://web.jhu.edu/secure/logos/test.txt.zip', '_blank', 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes'); return false;" target="_blank">Peabody Preparatory</a>
+                <a data-preview="peabody-preparatory" href="http://web.jhu.edu/secure/logos/peabody.zip">Peabody Preparatory</a>
             </li>
             <li>
-                <a data-preview="press" href="http://web.jhu.edu/secure/logos/test.txt.zip" onclick="window.open('http://web.jhu.edu/secure/logos/test.txt.zip', '_blank', 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes'); return false;" target="_blank">JHU Press</a>
+                <a data-preview="press" href="http://web.jhu.edu/secure/logos/press.zip">JHU Press</a>
             </li>
             <li>
-                <a data-preview="sais" href="http://web.jhu.edu/secure/logos/test.txt.zip" onclick="window.open('http://web.jhu.edu/secure/logos/test.txt.zip', '_blank', 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes'); return false;" target="_blank">School of Advanced International Studies</a>
+                <a data-preview="sais" href="http://web.jhu.edu/secure/logos/sais.zip">School of Advanced International Studies</a>
             </li>
             <li>
-                <a data-preview="libraries" href="http://web.jhu.edu/secure/logos/test.txt.zip" onclick="window.open('http://web.jhu.edu/secure/logos/test.txt.zip', '_blank', 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes'); return false;" target="_blank">Libraries</a>
+                <a data-preview="libraries" href="http://web.jhu.edu/secure/logos/sheridan.zip">Libraries</a>
             </li>
             <li>
-                <a data-preview="sheridan-libraries" href="http://web.jhu.edu/secure/logos/test.txt.zip" onclick="window.open('http://web.jhu.edu/secure/logos/test.txt.zip', '_blank', 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes'); return false;" target="_blank">Sheridan Libraries</a>
+                <a data-preview="sheridan-libraries" href="http://web.jhu.edu/secure/logos/sheridan.zip">Sheridan Libraries</a>
             </li>
             <li>
-                <a data-preview="sheridan-museums" href="http://web.jhu.edu/secure/logos/test.txt.zip" onclick="window.open('http://web.jhu.edu/secure/logos/test.txt.zip', '_blank', 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes'); return false;" target="_blank">Sheridan Libraries and University Museums</a>
+                <a data-preview="sheridan-museums" href="http://web.jhu.edu/secure/logos/sheridan.zip">Sheridan Libraries and University Museums</a>
             </li>
             <li>
-                <a data-preview="whiting" href="http://web.jhu.edu/secure/logos/test.txt.zip" onclick="window.open('http://web.jhu.edu/secure/logos/test.txt.zip', '_blank', 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes'); return false;" target="_blank">Whiting School of Engineering</a>
+                <a data-preview="whiting" href="http://web.jhu.edu/secure/logos/whiting.zip">Whiting School of Engineering</a>
             </li>
         </ul>
     </div>
