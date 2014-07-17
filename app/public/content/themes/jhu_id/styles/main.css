@@ -869,6 +869,12 @@ video {
 /*===========================================================
     ^Page
 ===========================================================*/
+
+html,
+.interior {
+    height: auto;
+}
+
 .page .site-masthead {
     position: relative;
     z-index: 2;
@@ -889,6 +895,7 @@ video {
     position: relative;
     z-index: 1;
     padding-top: 24px;
+    padding-bottom: 72px;
     background-color: #f8f7f6;
 }
 

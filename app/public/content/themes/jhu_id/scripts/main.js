@@ -1,16 +1,26 @@
 (function($) {
     $(function () {
+
+        var $page_nav = $('.interior .page-nav'),
+            $site_content = $('.interior .site-content');
+
         $(document).foundation();
 
         // Interior sticky header
         $('.interior .entry-header').waypoint('sticky').on('click', '.menu-toggle', function (){
             $.scrollTo(0);
         });
-        $('.interior .page-nav').waypoint('sticky', {
+        $site_content.waypoint({
+            offset: 'bottom-in-view',
+            handler: function (dir) {
+                $page_nav.toggleClass('stuck');
+            }
+        })
+        $page_nav.waypoint('sticky', {
             offset: 122,
-            wrapper: '<div class="sticky-wrapper" /><div class="row" /><div class="medium-2" />'
         }).localScroll({
-            hash: true
+            hash: true,
+            offset: -120
         });
 
         // $('.interior .guideline-item').waypoint({
