@@ -960,6 +960,19 @@ html,
     padding-left: 0;
 }
 
+.interior .uno,
+.interior .dos {
+    position: relative;
+}
+
+.interior .uno {
+    z-index: 2;
+}
+
+.interior .dos {
+    z-index: 1;
+}
+
 .interior .entry-header,
 .interior .page-nav {
     z-index: 10;
@@ -992,6 +1005,20 @@ html,
 
     .interior .page-nav.stuck {
         top: 122px;
+        left: 0;
+        width: 100%;
+        max-width: inherit;
+    }
+
+    .interior .page-nav.stuck .page-nav-wrap {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .interior .page-nav.stuck .page_nav {
+        position: relative;
+        left: 8.3333%;
         width: 140px;
     }
 
