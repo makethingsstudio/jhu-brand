@@ -173,11 +173,7 @@
                     </div>
                 </header>
 
-                <div class="uno columns medium-push-3  medium-9">
-                    <?php echo $guidelines; ?>
-                </div><!-- /.uno -->
-
-                <aside class="dos columns medium-pull-9 medium-2">
+                <aside class="dos columns medium-push-1 medium-2">
                     <nav class="page-nav">
                         <div class="page-nav-wrap">
                             <ul class="nav nav--stack page_nav">
@@ -187,6 +183,12 @@
                         </div>
                     </nav><!-- /.page-nav -->
                 </aside><!-- /.dos -->
+
+                <div class="uno columns medium-9">
+                    <?php echo $guidelines; ?>
+                </div><!-- /.uno -->
+
+
 
             </article><!-- /.locale guideline -->
         </div>
