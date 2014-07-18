@@ -179,10 +179,12 @@
 
                 <aside class="dos columns medium-pull-9 medium-2">
                     <nav class="page-nav">
-                        <ul class="nav nav--stack page_nav">
+                        <div class="page-nav-wrap">
+                            <ul class="nav nav--stack page_nav">
 
-                            <?php echo $pageNav; ?>
-                        </ul><!-- /.nav nav--stack page_nav -->
+                                <?php echo $pageNav; ?>
+                            </ul><!-- /.nav nav--stack page_nav -->
+                        </div>
                     </nav><!-- /.page-nav -->
                 </aside><!-- /.dos -->
 

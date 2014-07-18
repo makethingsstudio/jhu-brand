@@ -973,7 +973,13 @@ html,
     width: 100%;
 }
 
-.interior .entry-header.stuck .entry-header-wrap {
+.interior .page-nav.stuck {
+    width: 100%;
+    max-width: inherit;
+}
+
+.interior .entry-header.stuck .entry-header-wrap,
+.interior .page-nav.stuck .page-nav-wrap {
     width: 100%;
     max-width: 62.5rem;
     margin: 0 auto;
@@ -992,7 +998,14 @@ html,
 
     .interior .page-nav.stuck {
         top: 122px;
+        left: 0;
+        overflow: hidden;
+    }
+
+    .interior .page-nav.stuck .page_nav {
         width: 140px;
+        position: relative;
+        left: 8.33333%;
     }
 
 }
