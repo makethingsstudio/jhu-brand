@@ -216,7 +216,7 @@ video {
 .billboard-is-fullheight .billboard--fullheight {
     position: relative;
     height: 90%;
-    min-height: 450px;
+    min-height: 500px;
     max-height: 900px;
 }
 
@@ -1089,7 +1089,7 @@ html,
 }
 
 .home .utility-nav li {
-    margin: 0 15px 0 0;
+    margin: 0 15px 9px 0;
 }
 
 .home .utility-nav a {

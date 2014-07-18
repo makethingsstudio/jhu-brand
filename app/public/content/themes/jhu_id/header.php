@@ -49,7 +49,7 @@
                                 <a class="brand-mark" href="//brand.jhu.edu">Johns Hopkins University</a>
                             </h1>
                         </div>
-                        <nav class="site-utility columns medium-5" role="navigation">
+                        <nav class="site-utility columns medium-7" role="navigation">
                         <?php
                             $utility_args = array(
                                 'theme_location'  => 'utility-menu',
