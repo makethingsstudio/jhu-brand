@@ -8,36 +8,32 @@
  */
 ?>
 
-<article id="post-none" class="post empty">
+<article class="locale entry entry--empty">
+    <header class="entry-header">
+        <a class="left-off-canvas-toggle menu-toggle" href="#">Menu</a>
+        <h1 class="entry-heading medium-push-1">
+            <?php _e( 'Page Not Found', 'jhu_id' ); ?>
+        </h1>
+    </header>
 
-	<h1 class="post-title"><?php _e( 'Nothing Found', 'jhu_id' ); ?></h1>
+    <div class="uno columns medium-push-1 medium-9 post-content">
+        <?php if ( is_search() ) : ?>
 
-	<div class="post-content">
+            <p>
+                <?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'jhu_id' ); ?>
+            </p>
 
-		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+            <?php get_search_form(); ?>
 
-			<p>
-				<?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'jhu_id' ), admin_url( 'post-new.php' ) ); ?>
-			</p>
+        <?php else : ?>
 
-		<?php elseif ( is_search() ) : ?>
+            <p>
+                <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'jhu_id' ); ?>
+            </p>
 
-			<p>
-				<?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'jhu_id' ); ?>
-			</p>
+            <?php get_search_form(); ?>
 
-			<?php get_search_form(); ?>
-
-		<?php else : ?>
-
-			<p>
-				<?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'jhu_id' ); ?>
-			</p>
-
-			<?php get_search_form(); ?>
-
-		<?php endif; ?>
-
-	</div>
+        <?php endif; ?>
+    </div><!-- /.uno columns medium-push-1 medium-9 post-content -->
 
 </article>
