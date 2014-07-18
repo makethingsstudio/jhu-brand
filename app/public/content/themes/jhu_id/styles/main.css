@@ -969,6 +969,12 @@ html,
     width: 100%;
 }
 
+.interior .entry-header.stuck .entry-header-wrap {
+    width: 100%;
+    max-width: 62.5rem;
+    margin: 0 auto;
+}
+
 .interior .entry-header.stuck .entry-heading {
     margin-bottom: 0;
 }
@@ -977,13 +983,12 @@ html,
 
     .interior .entry-header.stuck {
         top: 0;
+        left: 0;
     }
 
     .interior .page-nav.stuck {
         top: 122px;
-        left: 50%;
-        width: 167px;
-        margin-left: -25.1875em;
+        width: 140px;
     }
 
 }
@@ -1152,7 +1157,7 @@ html,
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width:40em) {
 
     .billboard-is-fullheight,
     .billboard-is-fullheight body,

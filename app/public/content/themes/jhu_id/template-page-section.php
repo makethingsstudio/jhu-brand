@@ -165,10 +165,12 @@
         <div class="row">
             <article class="locale guideline entry" id="guideline-<?php echo get_the_slug(); ?>">
                 <header class="entry-header">
-                    <a class="left-off-canvas-toggle menu-toggle" href="#">Menu</a>
-                    <h1 class="entry-heading medium-push-1">
-                        <?php the_title(); ?>
-                    </h1>
+                    <div class="entry-header-wrap">
+                        <a class="left-off-canvas-toggle menu-toggle" href="#">Menu</a>
+                        <h1 class="entry-heading medium-8 medium-push-1">
+                            <?php the_title(); ?>
+                        </h1>
+                    </div>
                 </header>
 
                 <div class="uno columns medium-push-3  medium-9">

@@ -17,10 +17,10 @@
             }
         })
         $page_nav.waypoint('sticky', {
-            offset: 122,
+            offset: 140,
         }).localScroll({
             hash: true,
-            offset: -120
+            offset: -140
         });
 
         // $('.interior .guideline-item').waypoint({
