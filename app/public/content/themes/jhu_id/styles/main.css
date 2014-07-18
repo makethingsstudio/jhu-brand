@@ -965,6 +965,10 @@ html,
     z-index: 10;
 }
 
+.interior .page-nav {
+    max-width: 140px;
+}
+
 .interior .entry-header.stuck {
     width: 100%;
 }
@@ -1220,7 +1224,8 @@ html,
     }
 
     .home .site-nav,
-    .utility-nav {
+    .utility-nav,
+    .home .utility-nav {
         width: 100%;
         padding-right: 20px;
         padding-left: 20px;
@@ -1238,6 +1243,7 @@ html,
         text-align: left;
     }
 
+    .home .utility_nav li,
     .utility_nav li {
         margin-bottom: 9px;
     }
